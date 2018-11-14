@@ -4,4 +4,9 @@
     <string name="background">Background</string>
     <string name="avatar">avatar</string>
     <string name="username">John</string>
+    <string name="home_rhymes">home_rhymes</string>
+    <string name="home_zoo">home_zoo</string>
+    <string name="home_bank">home_bank</string>
+    <string name="home_zookeeper">home_zookeeper</string>
+    <string name="title_activity_rhyme_menu">RhymeMenuActivity</string>
 </resources>
