@@ -17,14 +17,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        ImageView rhymes = findViewById(R.id.MainActivity_rhymes);
-        rhymes.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, RhymeMenuActivity.class));
-            }
-        });
-
     }
 
     @Override
