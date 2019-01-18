@@ -7,4 +7,5 @@
     <string name="home_zoo">home_zoo</string>
     <string name="home_bank">home_bank</string>
     <string name="home_zookeeper">home_zookeeper</string>
+    <string name="home_logout">home_logout</string>
 </resources>

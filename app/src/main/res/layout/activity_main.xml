@@ -10,37 +10,55 @@
 
     <ImageView
         android:id="@+id/mainActivity_rhymes"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="171dp"
+        android:layout_height="343dp"
         android:contentDescription="@string/home_rhymes"
         android:src="@drawable/rhymes"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp" />
+        app:layout_constraintEnd_toStartOf="@+id/mainActivity_zoo"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="66dp" />
 
     <ImageView
         android:id="@+id/mainActivity_zoo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="171dp"
+        android:layout_height="343dp"
         android:contentDescription="@string/home_zoo"
         android:src="@drawable/zoo"
-        tools:layout_editor_absoluteX="150dp"
-        tools:layout_editor_absoluteY="0dp" />
+        app:layout_constraintEnd_toStartOf="@+id/mainActivity_bank"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/mainActivity_rhymes"
+        tools:layout_editor_absoluteY="66dp" />
 
     <ImageView
         android:id="@+id/mainActivity_bank"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="171dp"
+        android:layout_height="343dp"
         android:contentDescription="@string/home_bank"
         android:src="@drawable/bank"
-        tools:layout_editor_absoluteX="87dp"
-        tools:layout_editor_absoluteY="0dp" />
+        app:layout_constraintEnd_toStartOf="@+id/mainActivity_zookeeper"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/mainActivity_zoo"
+        tools:layout_editor_absoluteY="66dp" />
 
     <ImageView
         android:id="@+id/mainActivity_zookeeper"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="171dp"
+        android:layout_height="343dp"
         android:contentDescription="@string/home_zookeeper"
         android:src="@drawable/zookeeper"
-        tools:layout_editor_absoluteX="244dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/mainActivity_bank"
+        tools:layout_editor_absoluteY="66dp" />
+
+    <ImageView
+        android:id="@+id/mainActivity_logout"
+        android:layout_width="64dp"
+        android:layout_height="77dp"
+        android:contentDescription="@string/home_logout"
+        app:srcCompat="@drawable/logout3x"
+        tools:layout_editor_absoluteX="635dp"
         tools:layout_editor_absoluteY="0dp" />
+
 </android.support.constraint.ConstraintLayout>
