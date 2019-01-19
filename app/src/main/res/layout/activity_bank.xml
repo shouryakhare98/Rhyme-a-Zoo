@@ -7,11 +7,30 @@
     tools:context=".BankActivity">
 
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="768dp"
-        android:layout_height="547dp"
-        app:srcCompat="@drawable/gradient_12"
-        tools:layout_editor_absoluteX="-10dp"
-        tools:layout_editor_absoluteY="-236dp" />
+        android:id="@+id/home"
+        android:layout_width="64dp"
+        android:layout_height="77dp"
+        android:layout_marginEnd="645dp"
+        android:layout_marginBottom="325dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/home3x" />
 
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="64dp"
+        android:layout_height="77p"
+        android:layout_marginStart="565dp"
+        android:layout_marginTop="245dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.627"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/repeat3x" />
 </android.support.constraint.ConstraintLayout>
