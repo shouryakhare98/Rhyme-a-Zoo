@@ -8,4 +8,7 @@
     <string name="home_bank">home_bank</string>
     <string name="home_zookeeper">home_zookeeper</string>
     <string name="home_logout">home_logout</string>
+
+    <string name="bank_home">bank_home</string>
+    <string name="bank_repeat">bank_repeat</string>
 </resources>
