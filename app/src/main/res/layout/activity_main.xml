@@ -8,90 +8,90 @@
     android:orientation="horizontal"
     tools:context=".MainActivity">
 
-    <ImageView
+    <Button
         android:id="@+id/mainActivity_rhymes"
         android:layout_width="171dp"
         android:layout_height="343dp"
         android:layout_marginTop="66dp"
         android:layout_marginBottom="2dp"
         android:contentDescription="@string/home_rhymes"
-        android:src="@drawable/rhymes"
+        android:background="@drawable/rhymes"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/mainActivity_zoo"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
+    <Button
         android:id="@+id/mainActivity_zoo"
         android:layout_width="171dp"
         android:layout_height="343dp"
         android:layout_marginTop="66dp"
         android:layout_marginBottom="2dp"
         android:contentDescription="@string/home_zoo"
-        android:src="@drawable/zoo"
+        android:background="@drawable/zoo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/mainActivity_bank"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/mainActivity_rhymes"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
+    <Button
         android:id="@+id/mainActivity_bank"
         android:layout_width="171dp"
         android:layout_height="343dp"
         android:layout_marginTop="66dp"
         android:layout_marginBottom="2dp"
+        android:background="@drawable/bank"
         android:contentDescription="@string/home_bank"
-        android:src="@drawable/bank"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/mainActivity_zookeeper"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/mainActivity_zoo"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
+    <Button
         android:id="@+id/mainActivity_zookeeper"
         android:layout_width="171dp"
         android:layout_height="343dp"
         android:layout_marginTop="66dp"
         android:layout_marginBottom="2dp"
         android:contentDescription="@string/home_zookeeper"
-        android:src="@drawable/zookeeper"
+        android:background="@drawable/zookeeper"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/mainActivity_bank"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
+    <Button
         android:id="@+id/mainActivity_logout"
-        android:layout_width="64dp"
-        android:layout_height="77dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
+        android:background="@drawable/logout3x"
         android:contentDescription="@string/home_logout"
         app:layout_constraintBottom_toTopOf="@+id/mainActivity_zookeeper"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.983"
         app:layout_constraintStart_toEndOf="@+id/mainActivity_username"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.473"
-        app:srcCompat="@drawable/logout3x" />
+        app:layout_constraintVertical_bias="0.473" />
 
-    <ImageView
+    <Button
         android:id="@+id/mainActivity_avatar"
-        android:layout_width="64dp"
-        android:layout_height="77dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="8dp"
+        android:background="@drawable/dog"
         android:contentDescription="@string/avatar"
         app:layout_constraintBottom_toTopOf="@+id/mainActivity_rhymes"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.421"
-        app:srcCompat="@drawable/dog" />
+        app:layout_constraintVertical_bias="0.421" />
 
     <TextView
         android:id="@+id/mainActivity_username"

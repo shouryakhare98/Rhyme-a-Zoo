@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Rhyme-a-Zoo</string>
+    <string name="app_name">Rhyme a Zoo</string>
     <string name="action_settings">Settings</string>
     <string name="avatar">avatar</string>
     <string name="username">John</string>
@@ -11,4 +11,8 @@
 
     <string name="bank_home">bank_home</string>
     <string name="bank_repeat">bank_repeat</string>
+    <string name="no_coins">no coins</string>
+    <string name="no_coins_emote">no coins emote</string>
+
+    <string name="title_activity_avatar">AvatarActivity</string>
 </resources>
