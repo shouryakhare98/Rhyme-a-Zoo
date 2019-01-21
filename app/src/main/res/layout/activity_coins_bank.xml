@@ -107,4 +107,12 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.996" />
 
+    <LinearLayout
+        android:id="@+id/layout"
+        android:layout_width="715dp"
+        android:layout_height="259dp"
+        android:orientation="horizontal"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="76dp"></LinearLayout>
+
 </android.support.constraint.ConstraintLayout>
