@@ -47,10 +47,11 @@ public class MainActivity extends AppCompatActivity {
                 int totalCoins = pref.getInt("totalCoins", 0); //0 is default value if totalCoins does not exist
                 if (totalCoins <= 0) {
                     Intent bankIntent = new Intent(MainActivity.this, BankActivity.class);
+                    MainActivity.this.startActivity(bankIntent);
                 } else {
                     Intent bankIntent = new Intent(MainActivity.this, CoinsBankActivity.class);
+                    MainActivity.this.startActivity(bankIntent);
                 }
-                MainActivity.this.startActivity(bankIntent);
             }
         });
 

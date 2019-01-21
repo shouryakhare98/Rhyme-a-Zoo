@@ -1,7 +1,6 @@
 package com.example.shouryakhare.rhyme_a_zoo;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -9,7 +8,6 @@ import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 public class BankActivity extends AppCompatActivity {
@@ -20,72 +18,13 @@ public class BankActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bank);
 
-        TextView noCoins = findViewById(R.id.bankActivity_nocoins);
-        ImageView emote = findViewById(R.id.bankActivity_worriedface);
         final Button repeat = findViewById(R.id.bankActivity_repeat);
         final Button home = findViewById(R.id.bankActivity_home);
         final TextView numTotalGoldCoins = findViewById(R.id.bankActivity_numgold);
-        final TextView numTotalSilverCoins = findViewById(R.id.bankActivity_numsilver);
-        final TextView plusSign = findViewById(R.id.bankActivity_plus);
         final TextView earnedTotal = findViewById(R.id.bankActivity_earnedtotal);
 
-        //Retrieve coin values with shared preferences
-        SharedPreferences pref = getSharedPreferences("MyPref", 0);
-        int currentCoins = pref.getInt("currentCoins", 0); //0 is default value if currentCoins does not exist
-        int totalCoins = pref.getInt("totalCoins", 0); //0 is default value if totalCoins does not exist
-
-        int silver = currentCoins % 2;
-        currentCoins = currentCoins - silver;
-        int gold = currentCoins / 2;
-        int twenty = gold / 20;
-        gold = gold % 20;
-        int ten = gold /10;
-        gold = gold % 10;
-        int five = gold / 5;
-        gold = gold % 5;
-        int one = gold;
-
-        final int totalSilver = totalCoins % 2;
-        final int totalGold = totalCoins / 2;
-        numTotalGoldCoins.setText(String.valueOf(totalGold));
-        if (totalSilver != 0) {
-            numTotalSilverCoins.setText(String.valueOf(totalSilver));
-            plusSign.setText("+");
-        }
-
-        if (currentCoins >= 140) {
-            // hide text view that says no coins
-            noCoins.invalidate();
-            emote.invalidate();
-        } if (currentCoins <= 0) {
-            //show no coins text
-        } else {
-            // hide text view that says no coins
-            //display coin piles
-            noCoins.invalidate();
-            emote.invalidate();
-
-
-//            LinearLayout linearLayout= new LinearLayout(this);
-//            linearLayout.setOrientation(LinearLayout.VERTICAL);
-//
-//            linearLayout.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT,
-//                    LayoutParams.MATCH_PARENT));
-//
-//            ImageView imageView = new ImageView(this);
-//
-//            int id = getResources().getIdentifier("goldcoin", "drawable", getPackageName());
-//            imageView.setImageResource(id);
-//
-//            imageView.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT,
-//                    LayoutParams.WRAP_CONTENT));
-//            linearLayout.addView(imageView);
-//            setContentView(linearLayout);
-        }
-
         numTotalGoldCoins.setVisibility(View.INVISIBLE);
-        plusSign.setVisibility(View.INVISIBLE);
-        numTotalSilverCoins.setVisibility(View.INVISIBLE);
+        numTotalGoldCoins.setText(String.valueOf(0));
         earnedTotal.setVisibility(View.INVISIBLE);
 
         home.setOnClickListener(new View.OnClickListener() {
@@ -119,14 +58,6 @@ public class BankActivity extends AppCompatActivity {
                         earnedTotal.startAnimation(AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.fade_in));
                         earnedTotal.setVisibility(View.VISIBLE);
 
-                        if (totalSilver != 0) {
-                            numTotalSilverCoins.startAnimation(AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.fade_in));
-                            numTotalSilverCoins.setVisibility(View.VISIBLE);
-
-                            plusSign.startAnimation(AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.fade_in));
-                            plusSign.setVisibility(View.VISIBLE);
-                        }
-
                         coinsTotal.start();
                     }
                 });
@@ -146,14 +77,6 @@ public class BankActivity extends AppCompatActivity {
                         numTotalGoldCoins.setVisibility(View.INVISIBLE);
                         earnedTotal.startAnimation(AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.fade_out));
                         earnedTotal.setVisibility(View.INVISIBLE);
-
-                        if (totalSilver != 0) {
-                            numTotalSilverCoins.startAnimation(AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.fade_out));
-                            numTotalSilverCoins.setVisibility(View.INVISIBLE);
-
-                            plusSign.startAnimation(AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.fade_out));
-                            plusSign.setVisibility(View.INVISIBLE);
-                        }
                     }
                 });
             }
