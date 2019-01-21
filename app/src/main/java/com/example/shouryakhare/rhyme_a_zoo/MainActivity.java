@@ -39,7 +39,17 @@ public class MainActivity extends AppCompatActivity {
         final Button bank = findViewById(R.id.mainActivity_bank);
         bank.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent bankIntent = new Intent(MainActivity.this, BankActivity.class);
+                //Check if current coins are 0 or not
+                //If 0, launch no coins activity
+                //If not 0, display coins activity
+
+                SharedPreferences pref = getSharedPreferences("MyPref", 0);
+                int totalCoins = pref.getInt("totalCoins", 0); //0 is default value if totalCoins does not exist
+                if (totalCoins <= 0) {
+                    Intent bankIntent = new Intent(MainActivity.this, BankActivity.class);
+                } else {
+                    Intent bankIntent = new Intent(MainActivity.this, CoinsBankActivity.class);
+                }
                 MainActivity.this.startActivity(bankIntent);
             }
         });

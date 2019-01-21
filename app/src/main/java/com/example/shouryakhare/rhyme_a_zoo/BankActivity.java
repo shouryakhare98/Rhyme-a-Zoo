@@ -60,9 +60,27 @@ public class BankActivity extends AppCompatActivity {
         } if (currentCoins <= 0) {
             //show no coins text
         } else {
+            // hide text view that says no coins
             //display coin piles
             noCoins.invalidate();
             emote.invalidate();
+
+
+//            LinearLayout linearLayout= new LinearLayout(this);
+//            linearLayout.setOrientation(LinearLayout.VERTICAL);
+//
+//            linearLayout.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT,
+//                    LayoutParams.MATCH_PARENT));
+//
+//            ImageView imageView = new ImageView(this);
+//
+//            int id = getResources().getIdentifier("goldcoin", "drawable", getPackageName());
+//            imageView.setImageResource(id);
+//
+//            imageView.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT,
+//                    LayoutParams.WRAP_CONTENT));
+//            linearLayout.addView(imageView);
+//            setContentView(linearLayout);
         }
 
         numTotalGoldCoins.setVisibility(View.INVISIBLE);
