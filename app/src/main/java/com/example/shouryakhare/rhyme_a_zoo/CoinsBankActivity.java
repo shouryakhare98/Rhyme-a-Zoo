@@ -3,17 +3,15 @@ package com.example.shouryakhare.rhyme_a_zoo;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.media.MediaPlayer;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.LinearLayout;
-import android.widget.LinearLayout.LayoutParams;
 
-public class BankActivity extends AppCompatActivity {
+public class CoinsBankActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,8 +69,8 @@ public class BankActivity extends AppCompatActivity {
         home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent myIntent = new Intent(BankActivity.this, MainActivity.class);
-                BankActivity.this.startActivity(myIntent);
+                Intent myIntent = new Intent(CoinsBankActivity.this, MainActivity.class);
+                CoinsBankActivity.this.startActivity(myIntent);
             }
         });
 
@@ -85,14 +83,14 @@ public class BankActivity extends AppCompatActivity {
                 repeat.setEnabled(false);
                 home.setEnabled(false);
 
-                MediaPlayer coinsAvailable = MediaPlayer.create(BankActivity.this, R.raw.coins_available);
-                final MediaPlayer coinsTotal = MediaPlayer.create(BankActivity.this, R.raw.coins_total);
+                MediaPlayer coinsAvailable = MediaPlayer.create(CoinsBankActivity.this, R.raw.coins_available);
+                final MediaPlayer coinsTotal = MediaPlayer.create(CoinsBankActivity.this, R.raw.coins_total);
 
                 coinsAvailable.start();
                 coinsAvailable.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
                     @Override
                     public void onCompletion(MediaPlayer mediaPlayer) {
-                        View currentView = BankActivity.this.findViewById(android.R.id.content);
+                        View currentView = CoinsBankActivity.this.findViewById(android.R.id.content);
                         AlphaAnimation animate = new AlphaAnimation(1.0f, 0.4f);
                         animate.setDuration(1000);
                         animate.setFillAfter(true);
@@ -105,7 +103,7 @@ public class BankActivity extends AppCompatActivity {
                 coinsTotal.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
                     @Override
                     public void onCompletion(MediaPlayer mediaPlayer) {
-                        View currentView = BankActivity.this.findViewById(android.R.id.content);
+                        View currentView = CoinsBankActivity.this.findViewById(android.R.id.content);
                         AlphaAnimation animate = new AlphaAnimation(0.4f, 1.0f);
                         animate.setDuration(1000);
                         currentView.startAnimation(animate);
