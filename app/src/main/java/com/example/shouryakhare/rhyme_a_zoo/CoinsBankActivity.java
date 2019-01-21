@@ -10,6 +10,8 @@ import android.view.animation.AlphaAnimation;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.LinearLayout;
+import android.view.ViewGroup;
 
 public class CoinsBankActivity extends AppCompatActivity {
 
@@ -20,7 +22,6 @@ public class CoinsBankActivity extends AppCompatActivity {
         SharedPreferences pref = getSharedPreferences("MyPref", 0);
         int currentCoins = pref.getInt("currentCoins", 0); //0 is default value if currentCoins does not exist
         int totalCoins = pref.getInt("totalCoins", 0); //0 is default value if totalCoins does not exist
-        int coins = 0; //get coins here
 
         int silver = currentCoins % 2;
         currentCoins = currentCoins - silver;
@@ -40,25 +41,19 @@ public class CoinsBankActivity extends AppCompatActivity {
         } if (currentCoins <= 0) {
             //show no coins text
         } else {
-            // hide text view that says no coins
-            //display coin piles
+            LinearLayout lay = (LinearLayout)findViewById(R.id.layout);
+            ImageView[] views = new ImageView[7];
+            for (int i=0;i<7;i++){
+                ImageView iv = new ImageView(this);
+                ViewGroup.LayoutParams params = iv.getLayoutParams();
+                params.height = ViewGroup.LayoutParams.WRAP_CONTENT; // Or a custom size
+                params.width = ViewGroup.LayoutParams.WRAP_CONTENT; // Or a custom size
+                iv.setLayoutParams(params);
+                iv.setImageResource(R.drawable.coin10);
 
-            
-//            LinearLayout linearLayout= new LinearLayout(this);
-//            linearLayout.setOrientation(LinearLayout.VERTICAL);
-//
-//            linearLayout.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT,
-//                    LayoutParams.MATCH_PARENT));
-//
-//            ImageView imageView = new ImageView(this);
-//
-//            int id = getResources().getIdentifier("goldcoin", "drawable", getPackageName());
-//            imageView.setImageResource(id);
-//
-//            imageView.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT,
-//                    LayoutParams.WRAP_CONTENT));
-//            linearLayout.addView(imageView);
-//            setContentView(linearLayout);
+                views[i] = iv;
+                lay.addView(iv);
+            }
         }
 
         super.onCreate(savedInstanceState);
