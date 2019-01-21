@@ -15,6 +15,27 @@ public class BankActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        int coins = 0; //get coins here
+
+        int silver = coins % 2;
+        coins = coins - silver;
+        int gold = coins / 2;
+        int twenty = gold / 20;
+        gold = gold % 20;
+        int ten = gold /10;
+        gold = gold % 10;
+        int five = gold / 5;
+        gold = gold % 5;
+        int one = gold;
+
+        if (coins >= 140) {
+            // hide text view that says no coins
+        } if (coins <= 0) {
+            //show no coins text
+        } else {
+            //display coin piles
+        }
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bank);
 
