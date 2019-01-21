@@ -1,6 +1,7 @@
 package com.example.shouryakhare.rhyme_a_zoo;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -15,6 +16,18 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //Global variable of current coins using Shared Preferences
+        //Set here
+        //Can access in other activities
+        SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0); //0 for private mode
+        SharedPreferences.Editor editor = pref.edit();
+        if (!(pref.contains("currentCoins"))) {
+            //SharedPreferences does not contain currentCoins
+            //Initialize coins to 0
+            editor.putInt("currentCoins", 0);
+        }
+        editor.commit(); //commit changes
 
         final Button bank = findViewById(R.id.mainActivity_bank);
         bank.setOnClickListener(new View.OnClickListener() {

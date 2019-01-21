@@ -1,6 +1,7 @@
 package com.example.shouryakhare.rhyme_a_zoo;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -16,6 +17,11 @@ public class BankActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bank);
+
+        //Retrive coin values with shared preferences
+        SharedPreferences pref = getSharedPreferences("MyPref", 0);
+        int currentCoins = pref.getInt("currentCoins", 0); //0 is default value if currentCoins does not exist
+        System.out.println(currentCoins);
 
         final Button home = findViewById(R.id.bankActivity_home);
         home.setOnClickListener(new View.OnClickListener() {
