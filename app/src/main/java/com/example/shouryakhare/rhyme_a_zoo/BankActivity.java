@@ -15,11 +15,16 @@ public class BankActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        //Retrive coin values with shared preferences
+        SharedPreferences pref = getSharedPreferences("MyPref", 0);
+        int currentCoins = pref.getInt("currentCoins", 0); //0 is default value if currentCoins does not exist
+        int totalCoins = pref.getInt("totalCoins", 0); //0 is default value if totalCoins does not exist
         int coins = 0; //get coins here
 
-        int silver = coins % 2;
-        coins = coins - silver;
-        int gold = coins / 2;
+        int silver = currentCoins % 2;
+        currentCoins = currentCoins - silver;
+        int gold = currentCoins / 2;
         int twenty = gold / 20;
         gold = gold % 20;
         int ten = gold /10;
@@ -39,10 +44,6 @@ public class BankActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bank);
 
-        //Retrive coin values with shared preferences
-        SharedPreferences pref = getSharedPreferences("MyPref", 0);
-        int currentCoins = pref.getInt("currentCoins", 0); //0 is default value if currentCoins does not exist
-        System.out.println(currentCoins);
 
         final Button home = findViewById(R.id.bankActivity_home);
         home.setOnClickListener(new View.OnClickListener() {

@@ -24,8 +24,15 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences.Editor editor = pref.edit();
         if (!(pref.contains("currentCoins"))) {
             //SharedPreferences does not contain currentCoins
-            //Initialize coins to 0
+            //Initialize current coins to 0
+
             editor.putInt("currentCoins", 0);
+        }
+        if (!(pref.contains("totalCoins"))) {
+            //SharedPreferences does not contain totalCoins
+            //Initialize total coins to 0
+
+            editor.putInt("totalCoins", 0);
         }
         editor.commit(); //commit changes
 
