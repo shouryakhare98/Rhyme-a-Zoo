@@ -12,7 +12,6 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.LinearLayout;
-import android.view.ViewGroup;
 
 public class CoinsBankActivity extends AppCompatActivity {
 
@@ -53,19 +52,18 @@ public class CoinsBankActivity extends AppCompatActivity {
             plusSign.setText("+");
         }
 
+        currentCoins = 10;
+
         if (currentCoins >= 140) {
             // hide text view that says no coins
         } if (currentCoins <= 0) {
             //show no coins text
         } else {
-            LinearLayout lay = (LinearLayout)findViewById(R.id.layout);
+            LinearLayout lay = findViewById(R.id.layout);
             ImageView[] views = new ImageView[7];
             for (int i=0;i<7;i++){
                 ImageView iv = new ImageView(this);
-                ViewGroup.LayoutParams params = iv.getLayoutParams();
-                params.height = ViewGroup.LayoutParams.WRAP_CONTENT; // Or a custom size
-                params.width = ViewGroup.LayoutParams.WRAP_CONTENT; // Or a custom size
-                iv.setLayoutParams(params);
+                iv.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
                 iv.setImageResource(R.drawable.coin10);
 
                 views[i] = iv;

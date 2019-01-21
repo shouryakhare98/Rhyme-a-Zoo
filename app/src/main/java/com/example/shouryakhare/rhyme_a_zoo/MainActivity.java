@@ -44,8 +44,8 @@ public class MainActivity extends AppCompatActivity {
                 //If not 0, display coins activity
 
                 SharedPreferences pref = getSharedPreferences("MyPref", 0);
-                int totalCoins = pref.getInt("totalCoins", 0); //0 is default value if totalCoins does not exist
-                if (totalCoins <= 0) {
+                int currentCoins = pref.getInt("currentCoins", 0); //0 is default value if totalCoins does not exist
+                if (currentCoins <= 0) {
                     Intent bankIntent = new Intent(MainActivity.this, BankActivity.class);
                     MainActivity.this.startActivity(bankIntent);
                 } else {
