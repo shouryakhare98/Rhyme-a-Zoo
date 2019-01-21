@@ -13,6 +13,7 @@
     <string name="bank_repeat">bank_repeat</string>
     <string name="no_coins">no coins</string>
     <string name="no_coins_emote">no coins emote</string>
+    <string name="bank_earned_total">earned total</string>
 
     <string name="title_activity_avatar">AvatarActivity</string>
 </resources>
