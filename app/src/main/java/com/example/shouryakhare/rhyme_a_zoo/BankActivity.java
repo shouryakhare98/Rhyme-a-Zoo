@@ -1,6 +1,7 @@
 package com.example.shouryakhare.rhyme_a_zoo;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -16,25 +17,31 @@ public class BankActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        int coins = 1; //get coins here
 
-        if (coins >= 140) {
-            //
-        } if (coins <= 0) {
+        //Retrive coin values with shared preferences
+        SharedPreferences pref = getSharedPreferences("MyPref", 0);
+        int currentCoins = pref.getInt("currentCoins", 0); //0 is default value if currentCoins does not exist
+        int totalCoins = pref.getInt("totalCoins", 0); //0 is default value if totalCoins does not exist
+        int coins = 0; //get coins here
+
+        int silver = currentCoins % 2;
+        currentCoins = currentCoins - silver;
+        int gold = currentCoins / 2;
+        int twenty = gold / 20;
+        gold = gold % 20;
+        int ten = gold /10;
+        gold = gold % 10;
+        int five = gold / 5;
+        gold = gold % 5;
+        int one = gold;
+
+        if (currentCoins >= 140) {
+            // hide text view that says no coins
+            //display 140 coins
+        } if (currentCoins <= 0) {
             //show no coins text
         } else {
-            //coin logic
-            int silver = coins % 2;
-            coins = coins - silver;
-            int gold = coins / 2;
-            int twenty = gold / 20;
-            gold = gold % 20;
-            int ten = gold /10;
-            gold = gold % 10;
-            int five = gold / 5;
-            gold = gold % 5;
-            int one = gold;
-
+            // hide text view that says no coins
             //display coin piles
             LinearLayout linearLayout= new LinearLayout(this);
             linearLayout.setOrientation(LinearLayout.VERTICAL);
@@ -53,9 +60,9 @@ public class BankActivity extends AppCompatActivity {
             setContentView(linearLayout);
         }
 
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bank);
+
 
         final Button home = findViewById(R.id.bankActivity_home);
         home.setOnClickListener(new View.OnClickListener() {
@@ -68,11 +75,6 @@ public class BankActivity extends AppCompatActivity {
 
         TextView noCoins = findViewById(R.id.bankActivity_nocoins);
         ImageView emote = findViewById(R.id.bankActivity_worriedface);
-
-
-
-
-
 
         final Button repeat = findViewById(R.id.bankActivity_repeat);
         repeat.setOnClickListener(new View.OnClickListener() {
