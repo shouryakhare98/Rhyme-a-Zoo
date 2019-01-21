@@ -33,11 +33,13 @@ public class BankActivity extends AppCompatActivity {
         gold = gold % 5;
         int one = gold;
 
-        if (coins >= 140) {
+        if (currentCoins >= 140) {
             // hide text view that says no coins
-        } if (coins <= 0) {
+            //display 140 coins
+        } if (currentCoins <= 0) {
             //show no coins text
         } else {
+            // hide text view that says no coins
             //display coin piles
         }
 
