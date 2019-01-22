@@ -27,17 +27,15 @@ public class MainActivity extends AppCompatActivity {
         //Can access in other activities
         SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0); //0 for private mode
         SharedPreferences.Editor editor = pref.edit();
-        if (!(pref.contains("currentCoins"))) {
+        if (!(pref.contains("currentCoins")) || !(pref.contains("totalCoins"))) {
             //SharedPreferences does not contain currentCoins
-            //Initialize current coins to 0
+            //Initialize current coins and total coins to 0
 
             editor.putInt("currentCoins", 0);
-        }
-        if (!(pref.contains("totalCoins"))) {
-            //SharedPreferences does not contain totalCoins
-            //Initialize total coins to 0
-
             editor.putInt("totalCoins", 0);
+
+            Intent videoIntent = new Intent(MainActivity.this, VideoActivity.class);
+            MainActivity.this.startActivity(videoIntent);
         }
         editor.apply(); //commit changes
 
@@ -75,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
 
         exit.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                finishAndRemoveTask();
+                finishAffinity();
             }
         });
     }
