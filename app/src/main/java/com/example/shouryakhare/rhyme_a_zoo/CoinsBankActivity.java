@@ -52,22 +52,65 @@ public class CoinsBankActivity extends AppCompatActivity {
             plusSign.setText("+");
         }
 
-        currentCoins = 10;
+        // too many coins to show so stop at 140
+        if (currentCoins > 140) currentCoins = 140;
 
-        if (currentCoins >= 140) {
-            // hide text view that says no coins
-        } if (currentCoins <= 0) {
-            //show no coins text
-        } else {
-            LinearLayout lay = findViewById(R.id.layout);
-            ImageView[] views = new ImageView[7];
-            for (int i=0;i<7;i++){
+        if (currentCoins > 0) {
+            LinearLayout layout = findViewById(R.id.coinShowLayout);
+
+            // display twenty stack
+            for (int i = 0; i < twenty; i++) {
+                ImageView iv = new ImageView(this);
+                iv.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+                iv.setImageResource(R.drawable.coin20);
+                iv.getLayoutParams().height = 200;
+                iv.getLayoutParams().width = 200;
+
+                layout.addView(iv);
+            }
+
+            // display ten stack
+            for (int i = 0; i < ten; i++) {
                 ImageView iv = new ImageView(this);
                 iv.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
                 iv.setImageResource(R.drawable.coin10);
+                iv.getLayoutParams().height = 200;
+                iv.getLayoutParams().width = 200;
 
-                views[i] = iv;
-                lay.addView(iv);
+                layout.addView(iv);
+            }
+
+            // display five stack
+            for (int i = 0; i < five; i++) {
+                ImageView iv = new ImageView(this);
+                iv.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+                iv.setImageResource(R.drawable.coinstack);
+                iv.getLayoutParams().height = 200;
+                iv.getLayoutParams().width = 200;
+
+                layout.addView(iv);
+            }
+
+            // display single coin
+            for (int i = 0; i < one; i++) {
+                ImageView iv = new ImageView(this);
+                iv.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+                iv.setImageResource(R.drawable.coingold);
+                iv.getLayoutParams().height = 200;
+                iv.getLayoutParams().width = 200;
+
+                layout.addView(iv);
+            }
+
+            // display silver coin
+            for (int i = 0; i < silver; i++) {
+                ImageView iv = new ImageView(this);
+                iv.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+                iv.setImageResource(R.drawable.coinsilver);
+                iv.getLayoutParams().height = 200;
+                iv.getLayoutParams().width = 200;
+
+                layout.addView(iv);
             }
         }
 
@@ -96,11 +139,11 @@ public class CoinsBankActivity extends AppCompatActivity {
                 coinsAvailable.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
                     @Override
                     public void onCompletion(MediaPlayer mediaPlayer) {
-                        View currentView = CoinsBankActivity.this.findViewById(android.R.id.content);
-                        AlphaAnimation animate = new AlphaAnimation(1.0f, 0.4f);
-                        animate.setDuration(1000);
-                        animate.setFillAfter(true);
-                        currentView.startAnimation(animate);
+//                        View currentView = CoinsBankActivity.this.findViewById(android.R.id.content);
+//                        AlphaAnimation animate = new AlphaAnimation(1.0f, 0.4f);
+//                        animate.setDuration(1000);
+//                        animate.setFillAfter(true);
+//                        currentView.startAnimation(animate);
 
                         numTotalGoldCoins.startAnimation(AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.fade_in));
                         numTotalGoldCoins.setVisibility(View.VISIBLE);
@@ -122,10 +165,10 @@ public class CoinsBankActivity extends AppCompatActivity {
                 coinsTotal.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
                     @Override
                     public void onCompletion(MediaPlayer mediaPlayer) {
-                        View currentView = CoinsBankActivity.this.findViewById(android.R.id.content);
-                        AlphaAnimation animate = new AlphaAnimation(0.4f, 1.0f);
-                        animate.setDuration(1000);
-                        currentView.startAnimation(animate);
+//                        View currentView = CoinsBankActivity.this.findViewById(android.R.id.content);
+//                        AlphaAnimation animate = new AlphaAnimation(0.4f, 1.0f);
+//                        animate.setDuration(1000);
+//                        currentView.startAnimation(animate);
 
                         repeat.setEnabled(true);
                         home.setEnabled(true);

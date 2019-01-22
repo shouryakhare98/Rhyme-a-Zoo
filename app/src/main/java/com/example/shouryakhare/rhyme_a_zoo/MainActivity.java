@@ -17,6 +17,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Button bank = findViewById(R.id.mainActivity_bank);
+        Button avatar = findViewById(R.id.mainActivity_avatar);
+        TextView username = findViewById(R.id.mainActivity_username);
+        Button exit = findViewById(R.id.mainActivity_logout);
+
         //Global variable of current coins using Shared Preferences
         //Set here
         //Can access in other activities
@@ -34,9 +39,8 @@ public class MainActivity extends AppCompatActivity {
 
             editor.putInt("totalCoins", 0);
         }
-        editor.commit(); //commit changes
+        editor.apply(); //commit changes
 
-        final Button bank = findViewById(R.id.mainActivity_bank);
         bank.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 //Check if current coins are 0 or not
@@ -55,19 +59,23 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        final Button avatar = findViewById(R.id.mainActivity_avatar);
-        avatar.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                Intent avatarIntent = new Intent(MainActivity.this, AvatarActivity.class);
-                MainActivity.this.startActivity(avatarIntent);
-            }
-        });
+//        avatar.setOnClickListener(new View.OnClickListener() {
+//            public void onClick(View v) {
+//                Intent avatarIntent = new Intent(MainActivity.this, AvatarActivity.class);
+//                MainActivity.this.startActivity(avatarIntent);
+//            }
+//        });
+//
+//        username.setOnClickListener(new View.OnClickListener() {
+//            public void onClick(View v) {
+//                Intent avatarIntent = new Intent(MainActivity.this, AvatarActivity.class);
+//                MainActivity.this.startActivity(avatarIntent);
+//            }
+//        });
 
-        final TextView username = findViewById(R.id.mainActivity_username);
-        username.setOnClickListener(new View.OnClickListener() {
+        exit.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent avatarIntent = new Intent(MainActivity.this, AvatarActivity.class);
-                MainActivity.this.startActivity(avatarIntent);
+                finishAndRemoveTask();
             }
         });
     }
