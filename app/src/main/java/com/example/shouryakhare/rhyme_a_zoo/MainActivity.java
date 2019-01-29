@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Button bank = findViewById(R.id.mainActivity_bank);
+        Button rhymeMenu = findViewById(R.id.mainActivity_rhymes);
         Button avatar = findViewById(R.id.mainActivity_avatar);
         TextView username = findViewById(R.id.mainActivity_username);
         Button exit = findViewById(R.id.mainActivity_logout);
@@ -54,6 +55,13 @@ public class MainActivity extends AppCompatActivity {
                     Intent bankIntent = new Intent(MainActivity.this, CoinsBankActivity.class);
                     MainActivity.this.startActivity(bankIntent);
                 }
+            }
+        });
+
+        rhymeMenu.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent rhymeMenuIntent = new Intent(MainActivity.this, RhymeMenuActivity.class);
+                MainActivity.this.startActivity(rhymeMenuIntent);
             }
         });
 
