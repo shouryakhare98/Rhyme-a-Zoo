@@ -9,10 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".RhymeActivity"></activity>
         <activity
-            android:name=".AvatarActivity"
-            android:label="@string/title_activity_avatar"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:name=".VideoActivity"
+            android:label="@string/title_activity_video"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".MainActivity"
             android:configChanges="orientation"
@@ -31,8 +32,8 @@
             android:resource="@array/preloaded_fonts" />
 
         <activity android:name=".BankActivity" />
-
         <activity android:name=".CoinsBankActivity" />
+        <activity android:name=".RhymeMenuActivity" />
     </application>
 
 </manifest>

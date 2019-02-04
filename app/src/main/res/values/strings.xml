@@ -16,4 +16,5 @@
     <string name="bank_earned_total">earned total</string>
 
     <string name="title_activity_avatar">AvatarActivity</string>
+    <string name="title_activity_video">VideoActivity</string>
 </resources>

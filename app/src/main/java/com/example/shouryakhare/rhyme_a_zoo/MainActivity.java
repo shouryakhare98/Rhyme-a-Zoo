@@ -17,26 +17,29 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Button bank = findViewById(R.id.mainActivity_bank);
+        Button rhymeMenu = findViewById(R.id.mainActivity_rhymes);
+        Button avatar = findViewById(R.id.mainActivity_avatar);
+        TextView username = findViewById(R.id.mainActivity_username);
+        Button exit = findViewById(R.id.mainActivity_logout);
+
         //Global variable of current coins using Shared Preferences
         //Set here
         //Can access in other activities
         SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0); //0 for private mode
         SharedPreferences.Editor editor = pref.edit();
-        if (!(pref.contains("currentCoins"))) {
+        if (!(pref.contains("currentCoins")) || !(pref.contains("totalCoins"))) {
             //SharedPreferences does not contain currentCoins
-            //Initialize current coins to 0
+            //Initialize current coins and total coins to 0
 
             editor.putInt("currentCoins", 0);
-        }
-        if (!(pref.contains("totalCoins"))) {
-            //SharedPreferences does not contain totalCoins
-            //Initialize total coins to 0
-
             editor.putInt("totalCoins", 0);
-        }
-        editor.commit(); //commit changes
 
-        final Button bank = findViewById(R.id.mainActivity_bank);
+            Intent videoIntent = new Intent(MainActivity.this, VideoActivity.class);
+            MainActivity.this.startActivity(videoIntent);
+        }
+        editor.apply(); //commit changes
+
         bank.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 //Check if current coins are 0 or not
@@ -44,8 +47,8 @@ public class MainActivity extends AppCompatActivity {
                 //If not 0, display coins activity
 
                 SharedPreferences pref = getSharedPreferences("MyPref", 0);
-                int totalCoins = pref.getInt("totalCoins", 0); //0 is default value if totalCoins does not exist
-                if (totalCoins <= 0) {
+                int currentCoins = pref.getInt("currentCoins", 0); //0 is default value if totalCoins does not exist
+                if (currentCoins <= 0) {
                     Intent bankIntent = new Intent(MainActivity.this, BankActivity.class);
                     MainActivity.this.startActivity(bankIntent);
                 } else {
@@ -55,19 +58,30 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        final Button avatar = findViewById(R.id.mainActivity_avatar);
-        avatar.setOnClickListener(new View.OnClickListener() {
+        rhymeMenu.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent avatarIntent = new Intent(MainActivity.this, AvatarActivity.class);
-                MainActivity.this.startActivity(avatarIntent);
+                Intent rhymeMenuIntent = new Intent(MainActivity.this, RhymeMenuActivity.class);
+                MainActivity.this.startActivity(rhymeMenuIntent);
             }
         });
 
-        final TextView username = findViewById(R.id.mainActivity_username);
-        username.setOnClickListener(new View.OnClickListener() {
+//        avatar.setOnClickListener(new View.OnClickListener() {
+//            public void onClick(View v) {
+//                Intent avatarIntent = new Intent(MainActivity.this, AvatarActivity.class);
+//                MainActivity.this.startActivity(avatarIntent);
+//            }
+//        });
+//
+//        username.setOnClickListener(new View.OnClickListener() {
+//            public void onClick(View v) {
+//                Intent avatarIntent = new Intent(MainActivity.this, AvatarActivity.class);
+//                MainActivity.this.startActivity(avatarIntent);
+//            }
+//        });
+
+        exit.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent avatarIntent = new Intent(MainActivity.this, AvatarActivity.class);
-                MainActivity.this.startActivity(avatarIntent);
+                finishAffinity();
             }
         });
     }

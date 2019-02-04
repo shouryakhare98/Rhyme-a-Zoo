@@ -48,7 +48,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
         android:layout_marginTop="8dp"
-        android:textColor="#DAA520"
+        android:textColor="@android:color/holo_orange_light"
         android:textColorHighlight="@android:color/background_dark"
         android:textSize="70sp"
         android:textStyle="bold"
@@ -66,7 +66,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="344dp"
         android:layout_marginBottom="32dp"
-        android:textColor="@android:color/black"
+        android:textColor="@android:color/white"
         android:textSize="36sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -83,7 +83,7 @@
         android:layout_marginEnd="412dp"
         android:layout_marginBottom="8dp"
         android:text="@string/bank_earned_total"
-        android:textColor="@android:color/black"
+        android:textColor="@android:color/white"
         android:textColorHighlight="@android:color/holo_orange_dark"
         android:textSize="36sp"
         android:textStyle="bold"
@@ -108,17 +108,17 @@
         app:layout_constraintVertical_bias="0.996" />
 
     <LinearLayout
-        android:id="@+id/layout"
-        android:layout_width="715dp"
-        android:layout_height="259dp"
+        android:id="@+id/coinShowLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/bankActivity_repeat"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bankActivity_home"></LinearLayout>
+        app:layout_constraintTop_toTopOf="parent"></LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

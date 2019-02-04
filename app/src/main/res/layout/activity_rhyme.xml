@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RhymeActivity">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="135dp"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="false"
+        android:cropToPadding="false"
+        android:scaleType="matrix"
+        app:srcCompat="@drawable/gradient_12"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp" />
+
+    <ImageView
+        android:id="@+id/pic"
+        android:layout_width="274dp"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/bank"
+        tools:layout_editor_absoluteX="167dp"
+        tools:layout_editor_absoluteY="0dp" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="240dp"
+        android:layout_height="211dp"
+        android:text="Rhymes go here"
+        tools:layout_editor_absoluteX="460dp"
+        tools:layout_editor_absoluteY="93dp" />
+
+    <ImageView
+        android:id="@+id/right"
+        android:layout_width="87dp"
+        android:layout_height="75dp"
+        app:srcCompat="@drawable/forward3x"
+        tools:layout_editor_absoluteX="605dp"
+        tools:layout_editor_absoluteY="336dp" />
+
+    <ImageView
+        android:id="@+id/home"
+        android:layout_width="80dp"
+        android:layout_height="77dp"
+        app:srcCompat="@drawable/home3x"
+        tools:layout_editor_absoluteX="25dp"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <ImageView
+        android:id="@+id/imageView11"
+        android:layout_width="76dp"
+        android:layout_height="78dp"
+        app:srcCompat="@drawable/forward3x"
+        tools:layout_editor_absoluteX="441dp"
+        tools:layout_editor_absoluteY="333dp" />
+</android.support.constraint.ConstraintLayout>

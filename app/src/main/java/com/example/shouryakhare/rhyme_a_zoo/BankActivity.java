@@ -47,11 +47,11 @@ public class BankActivity extends AppCompatActivity {
                 coinsAvailable.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
                     @Override
                     public void onCompletion(MediaPlayer mediaPlayer) {
-                        View currentView = BankActivity.this.findViewById(android.R.id.content);
-                        AlphaAnimation animate = new AlphaAnimation(1.0f, 0.4f);
-                        animate.setDuration(1000);
-                        animate.setFillAfter(true);
-                        currentView.startAnimation(animate);
+//                        View currentView = BankActivity.this.findViewById(android.R.id.content);
+//                        AlphaAnimation animate = new AlphaAnimation(1.0f, 0.4f);
+//                        animate.setDuration(1000);
+//                        animate.setFillAfter(true);
+//                        currentView.startAnimation(animate);
 
                         numTotalGoldCoins.startAnimation(AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.fade_in));
                         numTotalGoldCoins.setVisibility(View.VISIBLE);
@@ -65,10 +65,10 @@ public class BankActivity extends AppCompatActivity {
                 coinsTotal.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
                     @Override
                     public void onCompletion(MediaPlayer mediaPlayer) {
-                        View currentView = BankActivity.this.findViewById(android.R.id.content);
-                        AlphaAnimation animate = new AlphaAnimation(0.4f, 1.0f);
-                        animate.setDuration(1000);
-                        currentView.startAnimation(animate);
+//                        View currentView = BankActivity.this.findViewById(android.R.id.content);
+//                        AlphaAnimation animate = new AlphaAnimation(0.4f, 1.0f);
+//                        animate.setDuration(1000);
+//                        currentView.startAnimation(animate);
 
                         repeat.setEnabled(true);
                         home.setEnabled(true);
