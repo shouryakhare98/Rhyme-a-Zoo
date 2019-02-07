@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 
 public class RhymeMenuActivity extends AppCompatActivity {
@@ -22,5 +23,18 @@ public class RhymeMenuActivity extends AppCompatActivity {
                 RhymeMenuActivity.this.startActivity(myIntent);
             }
         });
+
     }
+    /*
+    listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        @Override
+        public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+            Intent intent = new Intent(getApplicationContext(),RhymeActivity.class);
+            intent.putExtra("id",id);
+            startActivity(intent);
+
+
+        }
+    });
+    */
 }
