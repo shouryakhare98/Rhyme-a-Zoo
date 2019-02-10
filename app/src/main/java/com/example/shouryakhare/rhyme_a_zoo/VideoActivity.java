@@ -16,7 +16,7 @@ public class VideoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_video);
 
-        VideoView video = findViewById(R.id.videoActivity_video);
+        final VideoView video = findViewById(R.id.videoActivity_video);
         Button forward = findViewById(R.id.videoActivity_forward);
 
         video.setVideoURI(Uri.parse("android.resource://" + getPackageName() + "/raw/intro_video"));
@@ -33,6 +33,7 @@ public class VideoActivity extends AppCompatActivity {
         forward.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                video.stopPlayback();
                 Intent transitionIntent = new Intent(VideoActivity.this, MainActivity.class);
                 VideoActivity.this.startActivity(transitionIntent);
             }

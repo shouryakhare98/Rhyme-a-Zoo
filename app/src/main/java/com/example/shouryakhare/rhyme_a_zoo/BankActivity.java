@@ -27,9 +27,14 @@ public class BankActivity extends AppCompatActivity {
         numTotalGoldCoins.setText(String.valueOf(0));
         earnedTotal.setVisibility(View.INVISIBLE);
 
+        final MediaPlayer coinsAvailable = MediaPlayer.create(BankActivity.this, R.raw.coins_available);
+        final MediaPlayer coinsTotal = MediaPlayer.create(BankActivity.this, R.raw.coins_total);
+
         home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                coinsAvailable.stop();
+                coinsTotal.stop();
                 Intent myIntent = new Intent(BankActivity.this, MainActivity.class);
                 BankActivity.this.startActivity(myIntent);
             }
@@ -37,11 +42,8 @@ public class BankActivity extends AppCompatActivity {
 
         repeat.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+                repeat.setAlpha(0.5f);
                 repeat.setEnabled(false);
-                home.setEnabled(false);
-
-                MediaPlayer coinsAvailable = MediaPlayer.create(BankActivity.this, R.raw.coins_available);
-                final MediaPlayer coinsTotal = MediaPlayer.create(BankActivity.this, R.raw.coins_total);
 
                 coinsAvailable.start();
                 coinsAvailable.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
@@ -70,8 +72,8 @@ public class BankActivity extends AppCompatActivity {
 //                        animate.setDuration(1000);
 //                        currentView.startAnimation(animate);
 
+                        repeat.setAlpha(1.0f);
                         repeat.setEnabled(true);
-                        home.setEnabled(true);
 
                         numTotalGoldCoins.startAnimation(AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.fade_out));
                         numTotalGoldCoins.setVisibility(View.INVISIBLE);

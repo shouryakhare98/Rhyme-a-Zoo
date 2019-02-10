@@ -9,7 +9,8 @@
     <string name="home_zookeeper">home_zookeeper</string>
     <string name="home_logout">home_logout</string>
 
-    <string name="bank_home">bank_home</string>
+    <string name="go_home">go_home</string>
+
     <string name="bank_repeat">bank_repeat</string>
     <string name="no_coins">no coins</string>
     <string name="no_coins_emote">no coins emote</string>
@@ -17,8 +18,11 @@
 
     <string name="title_activity_avatar">AvatarActivity</string>
     <string name="title_activity_video">VideoActivity</string>
-    <string name="button4">Button4</string>
-    <string name="button3">Button3</string>
-    <string name="button2">Button2</string>
-    <string name="button1">Button1</string>
+
+    <string name="list_rhymes">list_rhymes</string>
+    <string name="background">background</string>
+    <string name="rhyme_illustration">rhyme_illustration</string>
+    <string name="rhyme_check">rhyme_check</string>
+    <string name="rhyme_forward">rhyme_forward</string>
+    <string name="rhyme_backward">rhyme_backward</string>
 </resources>

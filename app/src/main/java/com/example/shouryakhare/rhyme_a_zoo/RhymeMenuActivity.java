@@ -25,7 +25,7 @@ public class RhymeMenuActivity extends AppCompatActivity {
 
         final int[] drawables = {
                 R.drawable.thumbnail_001, R.drawable.thumbnail_002, R.drawable.thumbnail_004, R.drawable.thumbnail_006,
-                R.drawable.thumbnail_008
+                R.drawable.thumbnail_008, R.drawable.thumbnail_009
         };
 
         Button home = findViewById(R.id.rhymeActivity_home);
@@ -46,18 +46,18 @@ public class RhymeMenuActivity extends AppCompatActivity {
             LinearLayout thumbnail3 = new LinearLayout(this);
 
             if (indicesLeft == 1) {
-                thumbnail1 = createThumbnail(drawables[i], height);
+                thumbnail1 = createThumbnail(i, drawables[i], height);
                 column.addView(thumbnail1);
             } else if (indicesLeft == 2) {
-                thumbnail1 = createThumbnail(drawables[i], height);
-                thumbnail2 = createThumbnail(drawables[i+1], height);
+                thumbnail1 = createThumbnail(i+1, drawables[i], height);
+                thumbnail2 = createThumbnail(i+2, drawables[i+1], height);
 
                 column.addView(thumbnail1);
                 column.addView(thumbnail2);
             } else {
-                thumbnail1 = createThumbnail(drawables[i], height);
-                thumbnail2 = createThumbnail(drawables[i+1], height);
-                thumbnail3 = createThumbnail(drawables[i+2], height);
+                thumbnail1 = createThumbnail(i, drawables[i], height);
+                thumbnail2 = createThumbnail(i+1, drawables[i+1], height);
+                thumbnail3 = createThumbnail(i+2, drawables[i+2], height);
 
                 column.addView(thumbnail1);
                 column.addView(thumbnail2);
@@ -105,7 +105,7 @@ public class RhymeMenuActivity extends AppCompatActivity {
         });
     }
 
-    protected LinearLayout createThumbnail(int drawableId, int screenHeight) {
+    protected LinearLayout createThumbnail(int drawableIndex, int drawableId, int screenHeight) {
         LinearLayout outerLayout = new LinearLayout(this);
         outerLayout.setOrientation(LinearLayout.HORIZONTAL);
 
@@ -123,7 +123,9 @@ public class RhymeMenuActivity extends AppCompatActivity {
         TextView rhymeName = new TextView(this);
         rhymeName.setTextColor(Color.WHITE);
         rhymeName.setTextSize(23.0f);
-        rhymeName.setText("CHILDREN CALL ME MOTHER GOOSE");
+
+        JSONReader reader = new JSONReader(this);
+        rhymeName.setText(reader.getTitle(drawableIndex));
         rhymeName.setTypeface(null, Typeface.BOLD);
 
         String rhymePrefString = drawableId + "_coins";
