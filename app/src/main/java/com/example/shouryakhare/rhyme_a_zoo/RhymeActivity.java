@@ -17,11 +17,11 @@ public class RhymeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rhyme);
         //set the rhyme image to be the corresponding id
-        id = Integer.valueOf(getIntent().getExtras().getString("id"));
-        ImageView imageView = findViewById(R.id.pic);
-        String picString = "drawable/rhyme" + String.format("%03d", id) + "_illustration";
-        int imgResource = getResources().getIdentifier(picString, null, getPackageName());
-        imageView.setImageResource(imgResource);
+//        id = Integer.valueOf(getIntent().getExtras().getString("id"));
+//        ImageView imageView = findViewById(R.id.pic);
+//        String picString = "drawable/rhyme" + String.format("%03d", id) + "_illustration";
+//        int imgResource = getResources().getIdentifier(picString, null, getPackageName());
+//        imageView.setImageResource(imgResource);
 
     }
 }
