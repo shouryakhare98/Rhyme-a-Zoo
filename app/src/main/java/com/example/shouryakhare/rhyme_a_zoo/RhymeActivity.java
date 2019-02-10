@@ -16,7 +16,7 @@ public class RhymeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rhyme);
-        //set the rhyme image to be the corresponding id
+//        set the rhyme image to be the corresponding id
         id = Integer.valueOf(getIntent().getExtras().getString("id"));
         ImageView imageView = findViewById(R.id.pic);
         String picString = "drawable/rhyme" + String.format("%03d", id) + "_illustration";
