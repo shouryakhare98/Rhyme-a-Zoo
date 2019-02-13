@@ -17,14 +17,7 @@ public class RhymeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rhyme);
 
-        final int[] illustrations = {
-                R.drawable.rhyme001_illustration, R.drawable.rhyme002_illustration, R.drawable.rhyme004_illustration,
-                R.drawable.rhyme006_illustration, R.drawable.rhyme008_illustration, R.drawable.rhyme009_illustration
-        };
-
-        final int[] mp3 = {
-                R.raw.rhyme_001, R.raw.rhyme_002, R.raw.rhyme_004, R.raw.rhyme_006, R.raw.rhyme_008, R.raw.rhyme_009
-        };
+        IDProvider idProvider = new IDProvider();
 
         Button home = findViewById(R.id.rhymeActivity_home);
         Button rhymeMenu = findViewById(R.id.rhymeActivity_listRhymes);
@@ -39,14 +32,14 @@ public class RhymeActivity extends AppCompatActivity {
         if (rhymeIndex == 0) {
             backward.setVisibility(View.INVISIBLE);
             backward.setEnabled(false);
-        } else if (rhymeIndex == illustrations.length-1) {
+        } else if (rhymeIndex == idProvider.getIllustrationArrayLength()-1) {
             forward.setVisibility(View.INVISIBLE);
             forward.setEnabled(false);
         }
 
-        final MediaPlayer rhymeMedia = MediaPlayer.create(RhymeActivity.this, mp3[rhymeIndex]);
+        final MediaPlayer rhymeMedia = MediaPlayer.create(RhymeActivity.this, idProvider.getRhymesId(rhymeIndex));
 
-        illustration.setImageResource(illustrations[rhymeIndex]);
+        illustration.setImageResource(idProvider.getIllustrationId(rhymeIndex));
 
         JSONReader reader = new JSONReader(this);
         rhymeText.setText(reader.getRhyme(rhymeIndex));

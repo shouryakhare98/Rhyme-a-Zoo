@@ -23,10 +23,7 @@ public class RhymeMenuActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rhyme_menu);
 
-        final int[] drawables = {
-                R.drawable.thumbnail_001, R.drawable.thumbnail_002, R.drawable.thumbnail_004, R.drawable.thumbnail_006,
-                R.drawable.thumbnail_008, R.drawable.thumbnail_009
-        };
+        IDProvider idProvider = new IDProvider();
 
         Button home = findViewById(R.id.rhymeActivity_home);
         LinearLayout layout = findViewById(R.id.rhymeMenuActivity_linearLayout);
@@ -35,29 +32,29 @@ public class RhymeMenuActivity extends AppCompatActivity {
         getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
         int height = displayMetrics.heightPixels - 40;
 
-        for (int i = 0; i < drawables.length; i+=3) {
+        for (int i = 0; i < idProvider.getThumbnailArrayLength(); i+=3) {
             LinearLayout column = new LinearLayout(this);
             column.setOrientation(LinearLayout.VERTICAL);
 
-            int indicesLeft = drawables.length - i;
+            int indicesLeft = idProvider.getThumbnailArrayLength() - i;
 
             LinearLayout thumbnail1;
             LinearLayout thumbnail2 = new LinearLayout(this);
             LinearLayout thumbnail3 = new LinearLayout(this);
 
             if (indicesLeft == 1) {
-                thumbnail1 = createThumbnail(i, drawables[i], height);
+                thumbnail1 = createThumbnail(i, idProvider.getThumbnailId(i), height);
                 column.addView(thumbnail1);
             } else if (indicesLeft == 2) {
-                thumbnail1 = createThumbnail(i+1, drawables[i], height);
-                thumbnail2 = createThumbnail(i+2, drawables[i+1], height);
+                thumbnail1 = createThumbnail(i+1, idProvider.getThumbnailId(i), height);
+                thumbnail2 = createThumbnail(i+2, idProvider.getThumbnailId(i+1), height);
 
                 column.addView(thumbnail1);
                 column.addView(thumbnail2);
             } else {
-                thumbnail1 = createThumbnail(i, drawables[i], height);
-                thumbnail2 = createThumbnail(i+1, drawables[i+1], height);
-                thumbnail3 = createThumbnail(i+2, drawables[i+2], height);
+                thumbnail1 = createThumbnail(i, idProvider.getThumbnailId(i), height);
+                thumbnail2 = createThumbnail(i+1, idProvider.getThumbnailId(i+1), height);
+                thumbnail3 = createThumbnail(i+2, idProvider.getThumbnailId(i+2), height);
 
                 column.addView(thumbnail1);
                 column.addView(thumbnail2);
