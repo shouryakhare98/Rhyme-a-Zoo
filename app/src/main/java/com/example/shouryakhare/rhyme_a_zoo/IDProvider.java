@@ -6,17 +6,17 @@ package com.example.shouryakhare.rhyme_a_zoo;
 public class IDProvider {
 
     private int[] thumbnails = {
-            R.drawable.thumbnail_001, R.drawable.thumbnail_002, R.drawable.thumbnail_004, R.drawable.thumbnail_006,
-            R.drawable.thumbnail_008, R.drawable.thumbnail_009
+            R.drawable.thumbnail_001, R.drawable.thumbnail_103, R.drawable.thumbnail_055, R.drawable.thumbnail_104,
+            R.drawable.thumbnail_002, R.drawable.thumbnail_092
     };
 
     private int[] illustrations = {
-            R.drawable.rhyme001_illustration, R.drawable.rhyme002_illustration, R.drawable.rhyme004_illustration,
-            R.drawable.rhyme006_illustration, R.drawable.rhyme008_illustration, R.drawable.rhyme009_illustration
+            R.drawable.rhyme001_illustration, R.drawable.rhyme103_illustration, R.drawable.rhyme055_illustration,
+            R.drawable.rhyme104_illustration, R.drawable.rhyme002_illustration, R.drawable.rhyme092_illustration
     };
 
     private int[] rhymes = {
-            R.raw.rhyme_001, R.raw.rhyme_002, R.raw.rhyme_004, R.raw.rhyme_006, R.raw.rhyme_008, R.raw.rhyme_009
+            R.raw.rhyme_001, R.raw.rhyme_103, R.raw.rhyme_055, R.raw.rhyme_104, R.raw.rhyme_002, R.raw.rhyme_092
     };
 
     private int[][] questions = {

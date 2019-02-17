@@ -125,7 +125,7 @@ public class RhymeMenuActivity extends AppCompatActivity {
         rhymeName.setText(reader.getTitle(drawableIndex));
         rhymeName.setTypeface(null, Typeface.BOLD);
 
-        String rhymePrefString = drawableId + "_coins";
+        String rhymePrefString = drawableIndex + "_coins";
         int coins = 0;
         SharedPreferences pref = getSharedPreferences("MyPref", 0);
         SharedPreferences.Editor editor = pref.edit();
