@@ -65,12 +65,12 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-//        avatar.setOnClickListener(new View.OnClickListener() {
-//            public void onClick(View v) {
-//                Intent avatarIntent = new Intent(MainActivity.this, AvatarActivity.class);
-//                MainActivity.this.startActivity(avatarIntent);
-//            }
-//        });
+        avatar.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent avatarIntent = new Intent(MainActivity.this, AvatarActivity.class);
+                MainActivity.this.startActivity(avatarIntent);
+            }
+        });
 //
 //        username.setOnClickListener(new View.OnClickListener() {
 //            public void onClick(View v) {

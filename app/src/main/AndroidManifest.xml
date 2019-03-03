@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".RhymeActivity"></activity>
+        <activity android:name=".AvatarActivity"></activity>
+        <activity android:name=".RhymeActivity" />
         <activity
             android:name=".VideoActivity"
             android:label="@string/title_activity_video"
