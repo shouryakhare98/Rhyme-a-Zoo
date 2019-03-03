@@ -385,7 +385,6 @@
   },
 
 
-  //  Rhymes 100-135
   "105":{
     "title":"PRETTY JOHN WATTS",
     "rhyme":"Pretty John Watts,\nWe are troubled with rats,\nWill you drive them out of the house?\nWe have mice, too, in plenty,\nWe have mice, too, in plenty,\nBut let them stay\nAnd nibble away,\nWhat harm in a little brown mouse?",
@@ -548,6 +547,4 @@
     "questions":["The little boy put cheese and what on a shelf?","The rats and the what made such a strife?","The man saying the rhyme went to buy himself a what?","The man saying the rhyme was forced to go where?","What sound comes at the end of \"myself\" and \"shelf\"?"],
     "options":[["bread","apples","bones","eggs"],["mice","ducks","goats","spiders"],["wife","goat","table","pipe"],["London","Mars","India","Mexico"],["ELF","DUL","ING","SON"]]
   }
-
-
 }
