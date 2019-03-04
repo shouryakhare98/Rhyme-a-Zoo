@@ -128,13 +128,9 @@ public class RhymeMenuActivity extends AppCompatActivity {
         String rhymePrefString = drawableIndex + "_coins";
         int coins = 0;
         SharedPreferences pref = getSharedPreferences("MyPref", 0);
-        SharedPreferences.Editor editor = pref.edit();
-        if (!(pref.contains(rhymePrefString))) {
-            editor.putInt(rhymePrefString, 0);
-        } else {
+        if ((pref.contains(rhymePrefString))) {
             coins = pref.getInt(rhymePrefString, 0);
         }
-        editor.apply();
 
         int silverCoins = coins % 2;
         int goldCoins = coins / 2;

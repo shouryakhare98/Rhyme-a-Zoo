@@ -25,4 +25,8 @@
     <string name="rhyme_check">rhyme_check</string>
     <string name="rhyme_forward">rhyme_forward</string>
     <string name="rhyme_backward">rhyme_backward</string>
+    <string name="title_activity_quiz">QuizActivity</string>
+    <string name="title_activity_quiz_completed">QuizCompletedActivity</string>
+
+    <string name="rhyme_completed">Rhyme Completed</string>
 </resources>

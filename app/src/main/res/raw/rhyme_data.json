@@ -3,7 +3,7 @@
     "title":"CHILDREN CALL ME MOTHER GOOSE",
     "rhyme":"Old mother goose, when\nShe wanted to wander,\nWould ride through the air\nOn a very fine gander.",
     "questions":["Mother Goose would ride on a very fine what?	", "The rhyme says Mother Goose was what?", "Mother Goose liked to ride through the what?", "Mother Goose sometimes wanted to do what?", "What sound comes at the very beginning of \"wanted\" and \"wander\"?"],
-    "options":[["gander", "broom", "horse", "balloon"],["old", "rich", "young","sad"],["air","haystack","tent","puddle"],["wander","dance","hide","jump"],["w","s","t","k"]]
+    "options":[["gander", "broom", "horse", "balloon"],["old", "rich", "sick","sad"],["air","haystack","tent","puddle"],["wander","dance","hide","jump"],["w","s","t","k"]]
   },
   "1":{
     "title":"LADY-BIRD LADY-BIRD",
@@ -381,6 +381,6 @@
     "title":"COCK-A-DOODLE-DOO",
     "rhyme":"Cock-a-doodle-doo,\nMy mistress has lost her shoe:\nMy master’s lost his fiddlestick,\nAnd knows not what to do.",
     "questions":["The rooster said cock-a-doodle .... what?","The mistress lost her what?","The master lost his what?","The master knows not what to ….","What sound comes at the very beginning of \"doodle\" and \"doo\" and \"dame\"?","What word rhymes with \"do\"?"],
-    "options":[["do","bang","wow","yikes"],["shoe","hat","mitten","frog"],["fiddlestick", "rabbit	","stone","penny"],["do","say","yell","throw"],["d","s","m","p"],["shoe","fiddlestick","rooster","strawberry"]]
+    "options":[["do","bang","wow","yikes"],["shoe","hat","mitten","frog"],["fiddlestick", "rabbit","stone","penny"],["do","say","yell","throw"],["d","s","m","p"],["shoe","fiddlestick","rooster","strawberry"]]
   }
 }

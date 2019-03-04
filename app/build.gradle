@@ -25,7 +25,13 @@ android {
     }
 }
 
+repositories {
+    mavenCentral()
+}
+
 dependencies {
+    implementation 'com.makeramen:roundedimageview:2.3.0'
+    implementation 'org.apache.commons:commons-lang3:3.6'
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'com.android.support:appcompat-v7:27.1.1'
     implementation 'com.android.support.constraint:constraint-layout:1.1.3'

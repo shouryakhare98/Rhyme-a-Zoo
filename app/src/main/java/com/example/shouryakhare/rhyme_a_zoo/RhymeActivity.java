@@ -108,6 +108,15 @@ public class RhymeActivity extends AppCompatActivity {
             }
         });
 
+        check.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myIntent = new Intent(RhymeActivity.this, QuizActivity.class);
+                myIntent.putExtra("id", rhymeIndex);
+                RhymeActivity.this.startActivity(myIntent);
+            }
+        });
+
         repeat.performClick();
     }
 }

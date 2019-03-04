@@ -76,6 +76,19 @@ public class IDProvider {
             {},{}
     };
 
+    private int[] do_betters = {
+            R.raw.do_better_1, R.raw.do_better_2, R.raw.do_better_3, R.raw.do_better_4,
+            R.raw.do_better_5, R.raw.do_better_6, R.raw.do_better_7, R.raw.do_better_8,
+            R.raw.do_better_9, R.raw.do_better_10
+    };
+
+    private int[] encouragements = {
+            R.raw.encouragement_1, R.raw.encouragement_2, R.raw.encouragement_3,
+            R.raw.encouragement_4, R.raw.encouragement_5, R.raw.encouragement_6,
+            R.raw.encouragement_7, R.raw.encouragement_8, R.raw.encouragement_9,
+            R.raw.encouragement_10
+    };
+
     public int getThumbnailId(int index) {
         return this.thumbnails[index];
     }
@@ -98,6 +111,22 @@ public class IDProvider {
 
     public int getRhymesArrayLength() {
         return this.rhymes.length;
+    }
+
+    public int getDoBetter(int index) {
+        return this.do_betters[index];
+    }
+
+    public int getDoBetterArrayLength() {
+        return this.do_betters.length;
+    }
+
+    public int getEncouragement(int index) {
+        return this.encouragements[index];
+    }
+
+    public int getEncouragementArrayLength() {
+        return this.encouragements.length;
     }
 
     // TODO: Make sure the below three functions work
