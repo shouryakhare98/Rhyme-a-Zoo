@@ -22,7 +22,15 @@ public class IDProvider {
             R.drawable.thumbnail_165, R.drawable.thumbnail_166, R.drawable.thumbnail_167, R.drawable.thumbnail_168,
             R.drawable.thumbnail_169, R.drawable.thumbnail_170, R.drawable.thumbnail_171, R.drawable.thumbnail_172,
             R.drawable.thumbnail_173, R.drawable.thumbnail_174, R.drawable.thumbnail_175, R.drawable.thumbnail_103,
-
+            R.drawable.thumbnail_088, R.drawable.thumbnail_089, R.drawable.thumbnail_092, R.drawable.thumbnail_093,
+            R.drawable.thumbnail_095, R.drawable.thumbnail_097, R.drawable.thumbnail_098, R.drawable.thumbnail_105,
+            R.drawable.thumbnail_106, R.drawable.thumbnail_107, R.drawable.thumbnail_108, R.drawable.thumbnail_110,
+            R.drawable.thumbnail_111, R.drawable.thumbnail_112, R.drawable.thumbnail_113, R.drawable.thumbnail_113,
+            R.drawable.thumbnail_114, R.drawable.thumbnail_115, R.drawable.thumbnail_116, R.drawable.thumbnail_118,
+            R.drawable.thumbnail_120, R.drawable.thumbnail_121, R.drawable.thumbnail_122, R.drawable.thumbnail_123,
+            R.drawable.thumbnail_124, R.drawable.thumbnail_125, R.drawable.thumbnail_126, R.drawable.thumbnail_127,
+            R.drawable.thumbnail_128, R.drawable.thumbnail_130, R.drawable.thumbnail_131, R.drawable.thumbnail_132,
+            R.drawable.thumbnail_133
     };
 
     private int[] illustrations = {
@@ -42,6 +50,15 @@ public class IDProvider {
             R.drawable.rhyme165_illustration, R.drawable.rhyme166_illustration, R.drawable.rhyme167_illustration, R.drawable.rhyme168_illustration,
             R.drawable.rhyme169_illustration, R.drawable.rhyme170_illustration, R.drawable.rhyme171_illustration, R.drawable.rhyme172_illustration,
             R.drawable.rhyme173_illustration, R.drawable.rhyme174_illustration, R.drawable.rhyme175_illustration, R.drawable.rhyme103_illustration,
+            R.drawable.rhyme088_illustration, R.drawable.rhyme089_illustration, R.drawable.rhyme092_illustration, R.drawable.rhyme093_illustration,
+            R.drawable.rhyme095_illustration, R.drawable.rhyme097_illustration, R.drawable.rhyme098_illustration, R.drawable.rhyme105_illustration,
+            R.drawable.rhyme106_illustration, R.drawable.rhyme107_illustration, R.drawable.rhyme108_illustration, R.drawable.rhyme110_illustration,
+            R.drawable.rhyme111_illustration, R.drawable.rhyme112_illustration, R.drawable.rhyme113_illustration, R.drawable.rhyme113_illustration,
+            R.drawable.rhyme114_illustration, R.drawable.rhyme115_illustration, R.drawable.rhyme116_illustration, R.drawable.rhyme118_illustration,
+            R.drawable.rhyme120_illustration, R.drawable.rhyme121_illustration, R.drawable.rhyme122_illustration, R.drawable.rhyme123_illustration,
+            R.drawable.rhyme124_illustration, R.drawable.rhyme125_illustration, R.drawable.rhyme126_illustration, R.drawable.rhyme127_illustration,
+            R.drawable.rhyme128_illustration, R.drawable.rhyme130_illustration, R.drawable.rhyme131_illustration, R.drawable.rhyme132_illustration,
+            R.drawable.rhyme133_illustration
     };
 
     private int[] rhymes = {
@@ -61,7 +78,15 @@ public class IDProvider {
             R.raw.rhyme_165, R.raw.rhyme_166, R.raw.rhyme_167, R.raw.rhyme_168,
             R.raw.rhyme_169, R.raw.rhyme_170, R.raw.rhyme_171, R.raw.rhyme_172,
             R.raw.rhyme_173, R.raw.rhyme_174, R.raw.rhyme_175, R.raw.rhyme_103,
-
+            R.raw.rhyme_088, R.raw.rhyme_089, R.raw.rhyme_092, R.raw.rhyme_093,
+            R.raw.rhyme_095, R.raw.rhyme_097, R.raw.rhyme_098, R.raw.rhyme_105,
+            R.raw.rhyme_106, R.raw.rhyme_107, R.raw.rhyme_108, R.raw.rhyme_110,
+            R.raw.rhyme_111, R.raw.rhyme_112, R.raw.rhyme_113, R.raw.rhyme_113,
+            R.raw.rhyme_114, R.raw.rhyme_115, R.raw.rhyme_116, R.raw.rhyme_118,
+            R.raw.rhyme_120, R.raw.rhyme_121, R.raw.rhyme_122, R.raw.rhyme_123,
+            R.raw.rhyme_124, R.raw.rhyme_125, R.raw.rhyme_126, R.raw.rhyme_127,
+            R.raw.rhyme_128, R.raw.rhyme_130, R.raw.rhyme_131, R.raw.rhyme_132,
+            R.raw.rhyme_133
     };
 
     private int[][] questions = {

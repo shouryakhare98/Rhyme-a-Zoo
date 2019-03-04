@@ -383,10 +383,6 @@
     "questions":["The rooster said cock-a-doodle .... what?","The mistress lost her what?","The master lost his what?","The master knows not what to ….","What sound comes at the very beginning of \"doodle\" and \"doo\" and \"dame\"?","What word rhymes with \"do\"?"],
     "options":[["do","bang","wow","yikes"],["shoe","hat","mitten","frog"],["fiddlestick", "rabbit","stone","penny"],["do","say","yell","throw"],["d","s","m","p"],["shoe","fiddlestick","rooster","strawberry"]]
   },
-
-
-  //Rhymes 85 - 100 is 64-70
-
   "64":{
     "title":"LITTLE NANNY ETTICOAT",
     "rhyme":"Little Nanny Etticoat,\nIn a white petticoat,\nAnd a red nose;\nThe longer she stands\nThe shorter she grows.",
@@ -424,16 +420,11 @@
     "options":[["willie", "lavell", "tommy", "miguel"], ["sunshiney", "rainy", "snowy", "windy"], ["hay", "grass", "hair", "flowers"], ["mowing", "swimming", "dancing", "singing"], ["A", "O", "U", "R"]]
   },
   "70":{
-    "title":"DIDDLE DIDLE DUMPLING",
+    "title":"DIDDLE DIDDLE DUMPLING",
     "rhyme":"Diddle, diddle, dumpling, my son John,\nWent to bed with his trousers on,\nOne stocking off, and one stocking on,\nDiddle, diddle, dumpling, my son John.",
     "questions":["The man’s son is named what?", "Where did he go with his trousers on?", "He had how many stockings on?", "What word comes after diddle, diddle?", "The words “off” and “stocking” both have what sound?", "What sound comes at the beginning of “diddle” and “dumpling”?"],
     "options":[["john", "clarence", "miguel", "sunil"], ["bed", "puddle", "haystack", "fireplace"], ["1", "2", "4", "7"], ["dumpling", "burp", "baa-baa", "giggle"], ["O", "P", "R", "B"], ["D", "K", "S", "R"]]
   },
-
-
-
-
-
   "71":{
     "title":"PRETTY JOHN WATTS",
     "rhyme":"Pretty John Watts,\nWe are troubled with rats,\nWill you drive them out of the house?\nWe have mice, too, in plenty,\nWe have mice, too, in plenty,\nBut let them stay\nAnd nibble away,\nWhat harm in a little brown mouse?",
@@ -507,90 +498,84 @@
     "options":[["simple","tiny","clumsy","cranky"],["pieman","laundress","king","dancer"],["penny","tongue","spoon","apple"],["fair","zoo","airport","beach"],["S","H","F","V"], ["N","S","P","F"]]
   },
   "83":{
-    "title":"SING A SONG OF SIXPENCE",
-    "rhyme":"Sing a song of sixpence, a pocket full of rye,\nFour and twenty blackbirds baked in a pie.\nWhen the pie was opened the birds began to sing,\nNow wasn’t this a dainty dish to set before the king?",
-    "questions":["What color were the four and twenty birds?","The birds were baked in a what?","The dish was set before the what?","When it was opened the birds began to what?","What sound comes at the end of \"rye\" and \"pie\"?"],
-    "options":[["black","red","white","green"],["pie","cake","pumpkin","shoe"],["king","laundress","girl","elephant"],["sing","fly","wrestle","count"],["I","O","A","U"]]
-  },
-  "84":{
     "title":"RIDE A BLACK HORSE TO BANBURRY CROSS 1",
     "rhyme": "Ride a black horse\nTo Banbury Cross\nTo see what Tommy can buy:\nA penny white loaf,\nA penny white cake,\nAnd a two-penny apple pie.",
     "questions":["The rhyme says ride what color animal?","The rhyme says ride what animal?","What kind of pie is the two-penny pie?","What color are the penny loaf and penny cake?","What sound is at the beginning and end of \"cake\" and the beginning and the of \"black?\""],
     "options":[["black","white","brown","red"],["horse","turtle","elephant","fish"],["apple","pumpkin","banana","carrot"],["white","black","brown","red"],["K","M","S","B"]]
   },
-  "85":{
+  "84":{
     "title":"RIDE A BLACK HORSE TO BANBURRY CROSS 2",
     "rhyme":"Ride a black horse\nTo Banbury Cross,\nTo see a fine lady upon a white horse.\nRings on her fingers,\nAnd bells on her toes,\nAnd she shall have music wherever she goes.",
     "questions":["The fine lady is upon what color horse?","The fine lady has rings on her what?","The fine lady has bells on her what?","The lady will have what wherever she goes?","What sound is at the beginning of \"she\" and \"shall\"?"],
     "options":[["white","black","green","pink"],["fingers","hair","ears","nose"],["toes","ears","ribbons","basket"],["music","lemonade","skates","toothbrush"],["SH","CL","ND","UT"]]
   },
-  "86":{
+  "85":{
     "title":"THREE WISE MEN OF GOTHAM",
     "rhyme": "Three wise men of Gotham\nWent to sea in a bowl,\nAnd if the bowl had been stronger\nMy song had been longer.",
     "questions":["The rhyme says the men were what?","There were how many men?","They went to sea in a what?","What word rhymes with stronger?","What sound is at the beginning of \"went\" and \"wise\"?","What sound is at the end of \"stronger\" and \"longer\"?"],
     "options":[["wise","silly","clumsy","tiny"],["3","5","7","9"],["bowl","cobweb","shoe","cake"],["longer","climb","alive","clumsy"],["W","B","P","G"],["ER","CH","SK","BL"]]
   },
-  "87":{
+  "86":{
     "title":"THERE WERE TWO BIRDS 1",
     "rhyme":"There were two birds sat upon a stone,\nFal de ral-al de ral-laddy.\nOne flew away and then there was one,\nFal de ral-al de ral-laddy.\nThe other flew after and then there was none,\nFal de ral-al de ral-laddy.\nSo the poor stone was left all alone,\nFal de ral-al de ral-laddy.",
     "questions":["At the beginning, how many birds sat?","The birds sat on a what?","In the rhyme, what number rhymes with none?","What silly word comes after Fal de ral-al de ral---?","What sound is at the beginning of “laddy” and in the middle of “flaw” and “alone” and the end of “all”?"],
     "options":[["2","4","6","8"],["stone","chair","frog","puddle"],["1","3","5","7"],["laddy","dickery","jiggety","hickety"],["L","P","X","M"]]
   },
-  "88":{
+  "87":{
     "title":"THERE WERE TWO BIRDS 2",
     "rhyme": "One of these little birds back again flew,\nFal de ral-al de ral-laddy.\nThe other came after and then there were two,\nFal de ral-al de ral-laddy.\nSays one to the other: \"Tell me, how do you do?\"\nFal de ral-al de ral-laddy.\n\"Very well, thank you, and how are you?\"\nFal de ral-al de ral-laddy.",
     "questions":["What number rhymes with flew?","The rhyme says the birds were what?","When all the birds flew back there were how many?","One bird asks another, how do you what?","The rhyme says one what flew back?","What sound is at the end of \"flew\" and \"two\" and \"do\" and \"you\"?"],
     "options":[["2","4","5","7"],["little","big","fat","skinny"],["2","4","6","8"],["do","fly","sing","jump"],["bird","flying fish","flying squirrel","bat"],["U","M","Z","B"]]
   },
-  "89":{
+  "88":{
     "title":"PAT A CAKE PAT A CAKE",
     "rhyme":"Pat a cake, pat a cake, Baker’s man;\nBake me a cake as fast as you can.\nPit it and pat it and mark it with B,\nAnd put it in the oven for Baby and me.",
     "questions":["The rhyme says to pat a what?","The rhyme says to put it in the what?","The rhyme says it’s for me and who else?","The rhyme says to mark it with what letter?","What sound is in the middle of “pat” and “man”?"],
     "options":[["cake","pig","spoon","strawberry"],["oven","pumpkin","puddle","well"],["baby","dancer","hen","rabbit"],["B","W","K","R"],["A","O","U","E"]]
   },
-  "90":{
+  "89":{
     "title":"COLD AND RAW NORTH WINDS BLOW",
     "rhyme": "Cold and raw the north winds blow\nBleak in the morning early,\nAll the hills are covered with snow,\nAnd winter’s now come fairly.",
     "questions":["All the what are covered?","They are all covered with what?","The north winds blow raw and what?","What has now come fairly?","What sounds come at the end of \"early\" and \"fairly\"?"],
     "options":[["hills","beds","nails","candlesticks"],["snow","cobwebs","cranberries","haystacks"],["cold","hot","stinky","sweetly"],["winter","summer","Easter","Thanksgiving"],["LY","OW","AN","UT"]]
   },
-  "91":{
+  "90":{
     "title":"MAN IN THE MOON",
     "rhyme":"The man in the moon came down too soon\nTo inquire the way to Norridge;\nThe man in the south, he burnt his mouth\nWith eating cold plum porridge.",
     "questions":["The man in the what came down?","The man in the south burnt his what?","The man ate what kind of cold porridge?","What word rhymes with porridge?","What sounds come at the end of \"moon\" and \"soon\"?"],
-    "options":[["Moon		tree	window	barn"],["Mouth	hat	table	broom"],["Plum		apple		lemon		pumpkin"],["Norridge	cold	inquire	burnt"],["OON	EEL	ADD	ISH"]]
+    "options":[["Moon", "tree","window","barn"],["Mouth","hat","table","broom"],["Plum","apple","lemon","pumpkin"],["Norridge","cold","inquire","burnt"],["OON","EEL","ADD","ISH"]]
   },
-  "92":{
+  "91":{
     "title":"FOUR-AND-TWENTY TAILORS",
     "rhyme":"Four-and-twenty tailors\nWent to kill a snail;\nThe best man among them\nDared not touch her tail;\nShe put out her horns\nLike an angry little cow.\nRun, tailors, run, or\nShe’ll kill you all just now.",
     "questions":["There were how many tailors?","They dared not touch the snail’s what?","The snail put out her horns like an angry what?","At the end the rhyme tells the tailors to do what?","What sounds come at the end of \"cow\" and \"now\"?"],
-    "options":[["4 + 20","3 + 6","5 + 10","100"],["tail","dish","clock","eggs"],["cow","queen","elephant","piper"],["run","sing","play","sleep"],["OW","IF","ER","UL"]]
+    "options":[["4+20","3+6","5+10","100"],["tail","dish","clock","eggs"],["cow","queen","elephant","piper"],["run","sing","play","sleep"],["OW","IF","ER","UL"]]
   },
-  "93":{
+  "92":{
     "title":"TO BED TO BED",
     "rhyme": "\"To bed, to bed,\" says Sleepy-Head;\n\"Let’s stay awhile,\" says Slow;\n\"Put on the pot,\" says Hungry Ned,\n\"We’ll eat before we go.\"",
     "questions":["The rhyme begins by saying to go where?","The first person is what kind of head?","What word rhymes with go?","The rhyme says Ned is what?","What sound comes in the middle of \"bed\" and \"head\"?"],
     "options":[["bed","forest","bridge","oven"],["sleepy","angry","happy","afraid"],["slow","pearl","cap","sat"],["hungry","poor","rich","short"],["E","O","I","U"]]
   },
-  "94":{
+  "93":{
     "title":"ROBIN AND RICHARD",
     "rhyme":"Robin and Richard\nWere two lazy men;\nThey stayed in bed\nTill the clock struck ten.\nThen up jumps Robin\nAnd looks at the sky:\n\"Oh, brother Richard,\nThe sun’s very high.\nYou walk first\nWith the bottle and bag,\nAnd I’ll ride later\nOn the gray horse nag.\"",
     "questions":["The first man was named for what bird?","Where did the two men stay till ten?","The man says what is very high?","The man says he will ride on a horse nag that is what color?","What sound comes in the middle of \"bag\" and \"nag\"?"],
     "options":[["robin","duck","goose","hen"],["bed","tent","mountain","haystack"],["Sun","fiddlestick","tree","window"],["gray","black","green","red"],["A","E","O","U"]]
   },
-  "95":{
+  "94":{
     "title":"IS THE BLACKSMITH INSIDE",
     "rhyme": "Is the blacksmith inside?—Yes, that he is.\nCan he set a shoe? Yes, he can set two.\nHere a nail and there a nail,\nTick—tack—too.",
     "questions":["The rhyme says the man can set how many shoes?","The rhyme says here-a-what and there-a-what?","What number rhymes with shoe?","The rhyme asks if what person is inside?","What sound comes at the beginning of \"smith\" and \"set\"?"],
     "options":[["2","4","6","8"],["nail","cup","clock","pipe"],["2","3","5","7"],["blacksmith","astronaut","elf","piper"],["S","N","P","G"]]
   },
-  "96":{
+  "95":{
     "title":"I HAD A LITTLE HEN",
     "rhyme":"I had a little hen, the prettiest ever seen,\nShe washed me the dishes and kept the house clean.\nShe went to the garden to fetch me a flower,\nAnd always got home in less than an hour.\nShe baked me my bread, she brewed me my tea,\nShe sat by the fire and sang sweet songs to me.",
     "questions":["The rhyme is about what kind of little animal?","She went to the garden to fetch a what?","She baked what?","She sat by the what when she sang?","What sound comes at the end of \"flour\" and \"hour\"?"],
     "options":[["hen","fish","squirrel","turtle"],["flower","stone","pumpkin","frog"],["bread","pie","cobwebs","eggs"],["fire","table","cradle","window"],["OUR","ING","EER","ELD"]]
   },
-  "97":{
+  "96":{
     "title":"WHEN I WAS A LITTLE BOY",
     "rhyme":"When I was a little boy I lived by myself,\nAnd all the bread and cheese I got I put upon a shelf;\nThe rats and the mice, they made such a strife,\nI was forced to go to London to buy me a wife.",
     "questions":["The little boy put cheese and what on a shelf?","The rats and the what made such a strife?","The man saying the rhyme went to buy himself a what?","The man saying the rhyme was forced to go where?","What sound comes at the end of \"myself\" and \"shelf\"?"],
