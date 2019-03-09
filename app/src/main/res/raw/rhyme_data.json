@@ -368,14 +368,14 @@
   "61":{
     "title":"YOU OWE ME FIVE ONIONS",
     "rhyme":"\"You owe me five onions,\"\nSay the bells of St. Helen’s.\n\"When will you pay me?\"\nSay the bells of Old Bailey.\n\"When I grow rich,\"\nSay the bells of Shoreditch.\n\"When will that be?\"\nSay the bells of Stepney.\n\"I do not know,\"\nSays the great Bell of Bow.\n\"Two sticks in an apple,\"\nRing the bells of Whitechapel.\n\"Orchards and garden,\"\nSay the bells of St. Martin’s.\n\"Kettles and pans,\"\nSay the bells of St. Ann’s.\n\"Shingles and tiles,\"\nSay the bells of St. Giles.\n\"Old shoes and slippers,\"\nSay the bells of St. Peter’s.\n\"Sleepy-time yawns,\"\nSay the bells of St. John’s.",
-    "questions":["The bells of St. Helen’s say you owe five what that rhymes with Helen’s?", "The bells of Whitechapel ring two sticks and a what that rhymes with chapel?", "The bells of St. Ann’s say kettles and what that rhymes with Ann’s?", "The bells of St. John’s say sleepy-time what that rhymes with John’s?", "What sound is at the beginning of \"shillings\" and \"shoes\" and \"Shoreditch\"?", "What sound is at the end of say and pay?", "What sound comes at the end of \"me\" and \"be\" and in the middle and end of \"sleepy\"", "What sound comes at the beginning of \"old\" and the end of \"Bow\" and \"know\"?"],
-    "options":[["onions","prayers","skates","secrets"],["apple","goat","mitten","sandwich"],["pans","boots","berries","alligators"],["yawns","burp","snort","fib"],["SH","NG","PL","OU"],["O","I","A","U"], ["E","A","U","O"], ["O","E","A","I"]]
+    "questions":["The bells of St. Helen’s say you owe five what that rhymes with Helen’s?", "The bells of Whitechapel ring two sticks and a what that rhymes with chapel?", "The bells of St. Ann’s say kettles and what that rhymes with Ann’s?", "The bells of St. John’s say sleepy-time what that rhymes with John’s?", "What sound is at the beginning of \"shillings\" and \"shoes\" and \"Shoreditch\"?"],
+    "options":[["onions","prayers","skates","secrets"],["apple","goat","mitten","sandwich"],["pans","boots","berries","alligators"],["yawns","burp","snort","fib"],["SH","NG","PL","OU"]]
   },
   "62":{
     "title":"THERE WAS A MAN IN OUR TOWN",
     "rhyme":"There was a man in our town,\nAnd he was wondrous wise,\nHe jumped into a bramble-bush,\nAnd scratched out both his eyes;\nAnd when he saw his eyes were out,\nWith all his might and main\nHe jumped into another bush\nAnd scratched them in again.",
-    "questions":["The man in the town was wondrous what?", "The man jumped into a bramble-what?", "The man scratched out both his what?", "To scratch them back in he jumped into a what?", "What sound comes at the end of \"both\" and \"with\"?"],
-    "options":[["wise","slow","tall","old"],["bush","haystack","sandwich","flower"],["eyes","ears","thumbs","mittens"],["bush","egg","puddle","cradle"],["TH","PL","AW","OR"]]
+    "questions":["To scratch them back in he jumped into a what?", "The man jumped into a bramble-what?", "The man scratched out both his what?", "The man in the town was wondrous what?", "What sound comes at the end of \"both\" and \"with\"?"],
+    "options":[["bush","egg","puddle","cradle"],["bush","haystack","sandwich","flower"],["eyes","ears","thumbs","mittens"],["wise","slow","tall","old"],["TH","PL","AW","OR"]]
   },
   "63":{
     "title":"COCK-A-DOODLE-DOO",
