@@ -20,13 +20,17 @@ public class AvatarActivity extends AppCompatActivity {
 
         final ImageView avatar =(ImageView) findViewById(R.id.avatar);
 
+
+        int res = getResources().getIdentifier("zookeeper_boy1", "drawable", getPackageName());
+        avatar.setImageResource(res);
+
         final ImageView forward =(ImageView) findViewById(R.id.forward);
         forward.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (forward.isPressed()) {
                     index += 1;
-                    String imagename = ((isBoy) ? boy : girl) + Integer.toString(index % 36);
+                    String imagename = ((isBoy) ? boy : girl) + Integer.toString(modulo(index, 36));
                     int res = getResources().getIdentifier(imagename, "drawable", getPackageName());
                     avatar.setImageResource(res);
                 }
@@ -38,7 +42,7 @@ public class AvatarActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if (back.isPressed()) {
                     index -= 1;
-                    String imagename = ((isBoy) ? boy : girl) + Integer.toString(index % 36);
+                    String imagename = ((isBoy) ? boy : girl) + Integer.toString(modulo(index, 36));
                     int res = getResources().getIdentifier(imagename, "drawable", getPackageName());
                     avatar.setImageResource(res);
                 }
@@ -50,7 +54,7 @@ public class AvatarActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if (boyimg.isPressed()) {
                     isBoy = true;
-                    String imagename = ((isBoy) ? boy : girl) + Integer.toString(index % 36);
+                    String imagename = ((isBoy) ? boy : girl) + Integer.toString(modulo(index, 36));
                     int res = getResources().getIdentifier(imagename, "drawable", getPackageName());
                     avatar.setImageResource(res);
                 }
@@ -62,7 +66,7 @@ public class AvatarActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if (girlimg.isPressed()) {
                     isBoy = false;
-                    String imagename = ((isBoy) ? boy : girl) + Integer.toString(index % 36);
+                    String imagename = ((isBoy) ? boy : girl) + Integer.toString(modulo(index, 36));
                     int res = getResources().getIdentifier(imagename, "drawable", getPackageName());
                     avatar.setImageResource(res);
                 }
@@ -76,5 +80,9 @@ public class AvatarActivity extends AppCompatActivity {
                 AvatarActivity.this.startActivity(myIntent);
             }
         });
+    }
+    public int modulo( int m, int n ){
+        int mod =  m % n ;
+        return ( mod < 0 ) ? mod + n : mod;
     }
 }
