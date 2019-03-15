@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
 
         Button bank = findViewById(R.id.mainActivity_bank);
         Button rhymeMenu = findViewById(R.id.mainActivity_rhymes);
-        Button avatar = findViewById(R.id.mainActivity_avatar);
+        Button avatar = findViewById(R.id.mainActivity_zookeeper);
         TextView username = findViewById(R.id.mainActivity_username);
         Button exit = findViewById(R.id.mainActivity_logout);
 
