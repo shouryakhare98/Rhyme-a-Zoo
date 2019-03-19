@@ -5,66 +5,83 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gradient_12"
+    android:orientation="horizontal"
     tools:context=".AvatarActivity">
 
-    <ImageView
-        android:id="@+id/girl"
-        android:layout_width="86dp"
-        android:layout_height="86dp"
+    <Button
+        android:id="@+id/avatarActivity_girl"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
+        android:background="@drawable/girl3x"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/girl3x" />
 
-    <ImageView
-        android:id="@+id/home"
-        android:layout_width="86dp"
-        android:layout_height="92dp"
+    <Button
+        android:id="@+id/avatarActivity_home"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/home3x"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/home3x" />
 
     <ImageView
-        android:id="@+id/avatar"
+        android:id="@+id/avatarActivity_avatar"
         android:layout_width="251dp"
         android:layout_height="370dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="19dp"
-        android:layout_marginBottom="25dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:contentDescription="@string/avatarActivity_avatar"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/forward"
-        app:layout_constraintStart_toEndOf="@+id/back"
+        app:layout_constraintEnd_toStartOf="@+id/avatarActivity_forward"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/avatarActivity_back"
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@drawable/zookeeper-boy1" />
 
-    <ImageView
-        android:id="@+id/back"
-        android:layout_width="86dp"
-        android:layout_height="86dp"
-        android:layout_marginStart="125dp"
-        android:layout_marginTop="164dp"
+    <Button
+        android:id="@+id/avatarActivity_back"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/back3x"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/avatarActivity_avatar"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/back3x" />
 
-    <ImageView
-        android:id="@+id/forward"
-        android:layout_width="86dp"
-        android:layout_height="86dp"
-        android:layout_marginTop="164dp"
-        android:layout_marginEnd="152dp"
+    <Button
+        android:id="@+id/avatarActivity_forward"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/forward3x"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/avatarActivity_avatar"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/forward3x" />
 
-    <ImageView
-        android:id="@+id/boy"
-        android:layout_width="86dp"
-        android:layout_height="86dp"
+    <Button
+        android:id="@+id/avatarActivity_boy"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:layout_marginStart="16dp"
         android:layout_marginBottom="16dp"
+        android:background="@drawable/boy3x"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/boy3x" />

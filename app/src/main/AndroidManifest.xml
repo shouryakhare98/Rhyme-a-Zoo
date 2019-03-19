@@ -10,9 +10,17 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".ZooSectionActivity"
+            android:label="@string/title_activity_zoo_section"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".ZooActivity"
+            android:label="@string/title_activity_zoo"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
             android:name=".QuizCompletedActivity"
             android:label="@string/title_activity_quiz_completed"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".QuizActivity"
             android:label="@string/title_activity_quiz"

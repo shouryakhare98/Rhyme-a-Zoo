@@ -1,9 +1,11 @@
 package com.example.shouryakhare.rhyme_a_zoo;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 
 public class AvatarActivity extends AppCompatActivity {
@@ -18,13 +20,18 @@ public class AvatarActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_avatar);
 
-        final ImageView avatar =(ImageView) findViewById(R.id.avatar);
+        SharedPreferences pref = getSharedPreferences("MyPref", 0);
+        final SharedPreferences.Editor editor = pref.edit();
 
+        final ImageView avatar = findViewById(R.id.avatarActivity_avatar);
 
-        int res = getResources().getIdentifier("zookeeper_boy1", "drawable", getPackageName());
+        String imgname = pref.getString("zookeeper", "zookeeper_boy1");
+        int res = getResources().getIdentifier(imgname, "drawable", getPackageName());
         avatar.setImageResource(res);
 
-        final ImageView forward =(ImageView) findViewById(R.id.forward);
+        isBoy = imgname.contains("boy");
+
+        final Button forward = findViewById(R.id.avatarActivity_forward);
         forward.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -33,10 +40,13 @@ public class AvatarActivity extends AppCompatActivity {
                     String imagename = ((isBoy) ? boy : girl) + Integer.toString(modulo(index, 36));
                     int res = getResources().getIdentifier(imagename, "drawable", getPackageName());
                     avatar.setImageResource(res);
+
+                    editor.putString("zookeeper", imagename);
+                    editor.apply();
                 }
             }
         });
-        final ImageView back =(ImageView) findViewById(R.id.back);
+        final Button back = findViewById(R.id.avatarActivity_back);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -45,34 +55,43 @@ public class AvatarActivity extends AppCompatActivity {
                     String imagename = ((isBoy) ? boy : girl) + Integer.toString(modulo(index, 36));
                     int res = getResources().getIdentifier(imagename, "drawable", getPackageName());
                     avatar.setImageResource(res);
+
+                    editor.putString("zookeeper", imagename);
+                    editor.apply();
                 }
             }
         });
-        final ImageView boyimg =(ImageView) findViewById(R.id.boy);
+        final Button boyimg = findViewById(R.id.avatarActivity_boy);
         boyimg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (boyimg.isPressed()) {
                     isBoy = true;
-                    String imagename = ((isBoy) ? boy : girl) + Integer.toString(modulo(index, 36));
+                    String imagename = boy + Integer.toString(modulo(index, 36));
                     int res = getResources().getIdentifier(imagename, "drawable", getPackageName());
                     avatar.setImageResource(res);
+
+                    editor.putString("zookeeper", imagename);
+                    editor.apply();
                 }
             }
         });
-        final ImageView girlimg =(ImageView) findViewById(R.id.girl);
+        final Button girlimg = findViewById(R.id.avatarActivity_girl);
         girlimg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (girlimg.isPressed()) {
                     isBoy = false;
-                    String imagename = ((isBoy) ? boy : girl) + Integer.toString(modulo(index, 36));
+                    String imagename = girl + Integer.toString(modulo(index, 36));
                     int res = getResources().getIdentifier(imagename, "drawable", getPackageName());
                     avatar.setImageResource(res);
+
+                    editor.putString("zookeeper", imagename);
+                    editor.apply();
                 }
             }
         });
-        final ImageView home =(ImageView) findViewById(R.id.home);
+        final Button home = findViewById(R.id.avatarActivity_home);
         home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -83,6 +102,6 @@ public class AvatarActivity extends AppCompatActivity {
     }
     public int modulo( int m, int n ){
         int mod =  m % n ;
-        return ( mod < 0 ) ? mod + n : mod;
+        return ( mod <= 0 ) ? mod + n : mod;
     }
 }

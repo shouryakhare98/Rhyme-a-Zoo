@@ -29,4 +29,10 @@
     <string name="title_activity_quiz_completed">QuizCompletedActivity</string>
 
     <string name="rhyme_completed">Rhyme Completed</string>
+    <string name="title_activity_zoo">ZooActivity</string>
+
+    <string name="zoo_background">Zoo Background</string>
+    <string name="title_activity_zoo_section">ZooSectionActivity</string>
+
+    <string name="avatarActivity_avatar">avatar</string>
 </resources>

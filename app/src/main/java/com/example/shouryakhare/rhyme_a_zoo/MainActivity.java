@@ -8,7 +8,6 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
-import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -20,8 +19,8 @@ public class MainActivity extends AppCompatActivity {
         Button bank = findViewById(R.id.mainActivity_bank);
         Button rhymeMenu = findViewById(R.id.mainActivity_rhymes);
         Button avatar = findViewById(R.id.mainActivity_zookeeper);
-        TextView username = findViewById(R.id.mainActivity_username);
         Button exit = findViewById(R.id.mainActivity_logout);
+        Button zoo = findViewById(R.id.mainActivity_zoo);
 
         //Global variable of current coins using Shared Preferences
         //Set here
@@ -69,6 +68,14 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent avatarIntent = new Intent(MainActivity.this, AvatarActivity.class);
                 MainActivity.this.startActivity(avatarIntent);
+            }
+        });
+
+        zoo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent zooIntent = new Intent(MainActivity.this, ZooActivity.class);
+                MainActivity.this.startActivity(zooIntent);
             }
         });
 //
