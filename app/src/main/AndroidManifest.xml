@@ -14,6 +14,10 @@
             android:label="@string/title_activity_zoo"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
+            android:name=".ZooSection1Activity"
+            android:label="ZooSection1Activity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
             android:name=".ZooSection2Activity"
             android:label="ZooSection2Activity"
             android:theme="@style/AppTheme.NoActionBar" />

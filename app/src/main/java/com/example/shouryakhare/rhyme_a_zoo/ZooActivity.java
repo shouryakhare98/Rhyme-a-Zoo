@@ -133,7 +133,7 @@ public class ZooActivity extends AppCompatActivity {
                 Intent myIntent = new Intent(ZooActivity.this, ZooActivity.class);
                 switch (sectionNum) {
                     case 1:
-                        myIntent = new Intent(ZooActivity.this, ZooActivity.class);
+                        myIntent = new Intent(ZooActivity.this, ZooSection1Activity.class);
                         break;
                     case 2:
                         myIntent = new Intent(ZooActivity.this, ZooSection2Activity.class);
