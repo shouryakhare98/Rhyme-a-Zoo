@@ -130,8 +130,27 @@ public class ZooActivity extends AppCompatActivity {
         return new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent myIntent = new Intent(ZooActivity.this, ZooSectionActivity.class);
-                myIntent.putExtra("zoo_section", sectionNum);
+                Intent myIntent = new Intent(ZooActivity.this, ZooActivity.class);
+                switch (sectionNum) {
+                    case 1:
+                        myIntent = new Intent(ZooActivity.this, ZooActivity.class);
+                        break;
+                    case 2:
+                        myIntent = new Intent(ZooActivity.this, ZooSection2Activity.class);
+                        break;
+                    case 3:
+                        myIntent = new Intent(ZooActivity.this, ZooSection3Activity.class);
+                        break;
+                    case 4:
+                        myIntent = new Intent(ZooActivity.this, ZooSection4Activity.class);
+                        break;
+                    case 5:
+                        myIntent = new Intent(ZooActivity.this, ZooSection5Activity.class);
+                        break;
+                    case 6:
+                        myIntent = new Intent(ZooActivity.this, ZooSection6Activity.class);
+                        break;
+                }
                 ZooActivity.this.startActivity(myIntent);
             }
         };
