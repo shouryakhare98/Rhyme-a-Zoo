@@ -40,5 +40,9 @@
     <string name="zooSection_panda">Panda</string>
     <string name="zooSection_hippo">Hippo</string>
     <string name="zooSection_giraffe">Giraffe</string>
-    <string name="zooSection1_background">Background</string>
+    <string name="zooSection_owl">Owl</string>
+    <string name="zooSection_flamingo">Flamingo</string>
+    <string name="zooSection_ostrich">Ostrich</string>
+    <string name="zooSection_parrot">Parrot</string>
+    <string name="zooSection_background">Background</string>
 </resources>
