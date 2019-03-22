@@ -44,5 +44,13 @@
     <string name="zooSection_flamingo">Flamingo</string>
     <string name="zooSection_ostrich">Ostrich</string>
     <string name="zooSection_parrot">Parrot</string>
+    <string name="zooSection_seal">Seal</string>
+    <string name="zooSection_squid">Squid</string>
+    <string name="zooSection_dolphin">Dolphin</string>
+    <string name="zooSection_shark">Shark</string>
+    <string name="zooSection_lion">Lion</string>
+    <string name="zooSection_tiger">Tiger</string>
+    <string name="zooSection_jaguar">Jaguar</string>
+    <string name="zooSection_wolf">Wolf</string>
     <string name="zooSection_background">Background</string>
 </resources>

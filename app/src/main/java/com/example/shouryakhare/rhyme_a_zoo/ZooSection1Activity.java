@@ -148,7 +148,7 @@ public class ZooSection1Activity extends AppCompatActivity  {
 
                 String zookeeper = pref.getString("zookeeper", "zookeeper_boy1");
 
-                ConstraintLayout layout = findViewById(R.id.zooSection1_layout);
+                ConstraintLayout layout = findViewById(R.id.zooSection1Activity_layout);
                 iv.setLayoutParams(new ConstraintLayout.LayoutParams(ConstraintLayout.LayoutParams.WRAP_CONTENT, ConstraintLayout.LayoutParams.WRAP_CONTENT));
                 iv.getLayoutParams().width = 300;
                 iv.getLayoutParams().height = 500;

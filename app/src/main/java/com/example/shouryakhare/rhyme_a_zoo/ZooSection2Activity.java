@@ -86,21 +86,10 @@ public class ZooSection2Activity extends AppCompatActivity  {
         }
         if (!(this.pref.contains("totalAnimalsBought"))) {
             editor.putInt("totalAnimalsBought", 0);
-        } else if (this.pref.getInt("totalAnimalsBought", 0) < 4) {
-            this.owlCoins.setEnabled(false);
-            this.owlCoins.setVisibility(View.INVISIBLE);
-
-            this.flamingoCoins.setEnabled(false);
-            this.flamingoCoins.setVisibility(View.INVISIBLE);
-
-            this.ostrichCoins.setEnabled(false);
-            this.ostrichCoins.setVisibility(View.INVISIBLE);
-
-            this.parrotCoins.setEnabled(false);
-            this.parrotCoins.setVisibility(View.INVISIBLE);
         }
         editor.apply(); //commit changes
 
+        checkIfEnoughAnimals(this.pref.getInt("totalAnimalsBought", 0));
         setButtonListeners();
         setAnimalListeners();
         setImageColor();
@@ -160,7 +149,7 @@ public class ZooSection2Activity extends AppCompatActivity  {
 
                 String zookeeper = pref.getString("zookeeper", "zookeeper_boy1");
 
-                ConstraintLayout layout = findViewById(R.id.zooSection1_layout);
+                ConstraintLayout layout = findViewById(R.id.zooSection2Activity_layout);
                 iv.setLayoutParams(new ConstraintLayout.LayoutParams(ConstraintLayout.LayoutParams.WRAP_CONTENT, ConstraintLayout.LayoutParams.WRAP_CONTENT));
                 iv.getLayoutParams().width = 300;
                 iv.getLayoutParams().height = 500;
@@ -196,6 +185,7 @@ public class ZooSection2Activity extends AppCompatActivity  {
             public void onClick(View view) {
                 iv.setImageResource(android.R.color.transparent);
                 toggleButtons(true);
+                checkIfEnoughAnimals(pref.getInt("totalAnimalsBought", 0));
                 cancel.setVisibility(View.INVISIBLE);
                 cancel.setEnabled(false);
             }
@@ -441,6 +431,22 @@ public class ZooSection2Activity extends AppCompatActivity  {
             this.parrot.setImageResource(R.drawable.parrot_color);
             this.parrotCoins.setBackgroundResource(R.drawable.play3x);
             this.parrotCoins.setAlpha(1.0f);
+        }
+    }
+
+    void checkIfEnoughAnimals(int totalAnimals) {
+        if (totalAnimals < 4) {
+            this.owlCoins.setEnabled(false);
+            this.owlCoins.setVisibility(View.INVISIBLE);
+
+            this.flamingoCoins.setEnabled(false);
+            this.flamingoCoins.setVisibility(View.INVISIBLE);
+
+            this.ostrichCoins.setEnabled(false);
+            this.ostrichCoins.setVisibility(View.INVISIBLE);
+
+            this.parrotCoins.setEnabled(false);
+            this.parrotCoins.setVisibility(View.INVISIBLE);
         }
     }
 }
