@@ -23,5 +23,19 @@ public class ZooSection2Activity extends AppCompatActivity  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_zoo_section2);
 
+        //True if colored animal should be shown
+        //False if grey animal should be shown
+        SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0); //0 for private mode
+        SharedPreferences.Editor editor = pref.edit();
+        if (!(pref.contains("owl")) || !(pref.contains("flamingo")) || !(pref.contains("ostrich")) || !(pref.contains("parrot"))) {
+            //SharedPreferences does not contain currentCoins
+            //Initialize current coins and total coins to 0
+
+            editor.putBoolean("owl", false);
+            editor.putBoolean("flamingo", false);
+            editor.putBoolean("ostrich", false);
+            editor.putBoolean("parrot", false);
+        }
+        editor.apply(); //commit changes
     }
 }

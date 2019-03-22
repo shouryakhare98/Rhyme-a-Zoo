@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/zooActivity_layout"
@@ -9,4 +9,117 @@
     android:orientation="horizontal"
     tools:context=".ZooSection2Activity">
 
-</LinearLayout>
+    <ImageView
+        android:id="@+id/owl_grey"
+        android:layout_width="173dp"
+        android:layout_height="256dp"
+        android:layout_marginEnd="444dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/owl_grey" />
+
+    <ImageView
+        android:id="@+id/owl_color"
+        android:layout_width="173dp"
+        android:layout_height="256dp"
+        android:layout_marginEnd="440dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/owl_color" />
+
+    <ImageView
+        android:id="@+id/flamingo_grey"
+        android:layout_width="197dp"
+        android:layout_height="251dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="120dp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.182"
+        app:layout_constraintStart_toStartOf="@+id/owl_color"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/flamingo_grey" />
+
+    <ImageView
+        android:id="@+id/flamingo_color"
+        android:layout_width="197dp"
+        android:layout_height="251dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="120dp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.137"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/flamingo_color" />
+
+    <ImageView
+        android:id="@+id/ostrich_grey"
+        android:layout_width="230dp"
+        android:layout_height="226dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.566"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.495"
+        app:srcCompat="@drawable/ostrich_grey" />
+
+    <ImageView
+        android:id="@+id/ostrich_color"
+        android:layout_width="230dp"
+        android:layout_height="226dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.566"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.495"
+        app:srcCompat="@drawable/ostrich_color" />
+
+    <ImageView
+        android:id="@+id/parrot_grey"
+        android:layout_width="270dp"
+        android:layout_height="267dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="380dp"
+        android:layout_marginTop="8dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.342"
+        app:srcCompat="@drawable/parrot_grey" />
+
+    <ImageView
+        android:id="@+id/parrot_color"
+        android:layout_width="270dp"
+        android:layout_height="267dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="380dp"
+        android:layout_marginTop="8dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.342"
+        app:srcCompat="@drawable/parrot_color" />
+</android.support.constraint.ConstraintLayout>
