@@ -35,4 +35,10 @@
     <string name="title_activity_zoo_section">ZooSectionActivity</string>
 
     <string name="avatarActivity_avatar">avatar</string>
+
+    <string name="zooSection_kangaroo">Kangaroo</string>
+    <string name="zooSection_panda">Panda</string>
+    <string name="zooSection_hippo">Hippo</string>
+    <string name="zooSection_giraffe">Giraffe</string>
+    <string name="zooSection1_background">Background</string>
 </resources>
