@@ -52,5 +52,13 @@
     <string name="zooSection_tiger">Tiger</string>
     <string name="zooSection_jaguar">Jaguar</string>
     <string name="zooSection_wolf">Wolf</string>
+    <string name="zooSection_rattlesnake">Rattlesnake</string>
+    <string name="zooSection_alligator">Alligator</string>
+    <string name="zooSection_turtle">Turtle</string>
+    <string name="zooSection_iguana">Iguana</string>
+    <string name="zooSection_chimp">Chimp</string>
+    <string name="zooSection_baboon">Baboon</string>
+    <string name="zooSection_gorilla">Gorilla</string>
+    <string name="zooSection_monkey">Monkey</string>
     <string name="zooSection_background">Background</string>
 </resources>

@@ -44,7 +44,7 @@ public class ZooActivity extends AppCompatActivity {
         for (int i = 0; i < lowerSet.length; i++) {
             lowerSet[i].setOnClickListener(returnListener(i+1));
             upperSet[i].setOnClickListener(returnListener(i+1));
-            upperSet[i].setVisibility(View.INVISIBLE);
+            upperSet[i].setBackgroundResource(android.R.color.transparent);
         }
 
         this.zooCatch.setOnClickListener(new View.OnClickListener() {
@@ -92,15 +92,14 @@ public class ZooActivity extends AppCompatActivity {
         this.help.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                for (final Button upperSetButton : upperSet) {
-                    upperSetButton.startAnimation(AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.fade_in));
-                    upperSetButton.setVisibility(View.VISIBLE);
+                for (int i = 0; i < upperSet.length; i++) {
+                    final int num = i;
+                    upperSet[num].setBackgroundResource(ZooActivity.this.getApplicationContext().getResources().getIdentifier("number"+(num+1), "drawable", ZooActivity.this.getPackageName()));
 
-                    upperSetButton.postDelayed(new Runnable() {
+                    upperSet[i].postDelayed(new Runnable() {
                         @Override
                         public void run() {
-                            upperSetButton.startAnimation(AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.fade_out));
-                            upperSetButton.setVisibility(View.INVISIBLE);
+                            upperSet[num].setBackgroundResource(android.R.color.transparent);
                         }
                     }, 5000);
                 }
