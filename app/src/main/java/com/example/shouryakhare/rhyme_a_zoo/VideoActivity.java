@@ -9,6 +9,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.VideoView;
 
+/**
+ * Activity to display the intro video when the user opens the rhyme for the first time
+ */
 public class VideoActivity extends AppCompatActivity {
 
     @Override
@@ -16,12 +19,15 @@ public class VideoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_video);
 
+        // Get views
         final VideoView video = findViewById(R.id.videoActivity_video);
         Button forward = findViewById(R.id.videoActivity_forward);
 
+        // Play video
         video.setVideoURI(Uri.parse("android.resource://" + getPackageName() + "/raw/intro_video"));
         video.start();
 
+        // When video is completed or forward button is pressed, go to home screen
         video.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mediaPlayer) {

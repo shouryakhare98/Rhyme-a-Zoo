@@ -13,6 +13,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.LinearLayout;
 
+/**
+ * Activity to show the bank when the user has non-zero coins to spend
+ */
 public class CoinsBankActivity extends AppCompatActivity {
 
     @Override
@@ -21,6 +24,7 @@ public class CoinsBankActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_coins_bank);
 
+        // Get all views
         final Button repeat = findViewById(R.id.bankActivity_repeat);
         final Button home = findViewById(R.id.bankActivity_home);
         final TextView numTotalGoldCoins = findViewById(R.id.bankActivity_numgold);
@@ -33,6 +37,7 @@ public class CoinsBankActivity extends AppCompatActivity {
         int currentCoins = pref.getInt("currentCoins", 0); //0 is default value if currentCoins does not exist
         int totalCoins = pref.getInt("totalCoins", 0); //0 is default value if totalCoins does not exist
 
+        // Math to get current silver and gold coins in the bank
         int silver = currentCoins % 2;
         currentCoins = currentCoins - silver;
         int gold = currentCoins / 2;
@@ -44,21 +49,27 @@ public class CoinsBankActivity extends AppCompatActivity {
         gold = gold % 5;
         int one = gold;
 
+        // Math to get total silver and gold coins ever earned
         final int totalSilver = totalCoins % 2;
         final int totalGold = totalCoins / 2;
+
+        // Set text view to number of total gold coins
         numTotalGoldCoins.setText(String.valueOf(totalGold));
+        // Display silver text view only if number of silver coins is non-zero
         if (totalSilver != 0) {
             numTotalSilverCoins.setText(String.valueOf(totalSilver));
             plusSign.setText("+");
         }
 
-        // too many coins to show so stop at 140
+        // Too many coins to show so stop at 140
         if (currentCoins > 140) currentCoins = 140;
 
+        // Display current coins in the form of coin images
         if (currentCoins > 0) {
+            // Create linear layout to which images are added
             LinearLayout layout = findViewById(R.id.coinShowLayout);
 
-            // display twenty stack
+            // display twenty coin stack
             for (int i = 0; i < twenty; i++) {
                 ImageView iv = new ImageView(this);
                 iv.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
@@ -69,7 +80,7 @@ public class CoinsBankActivity extends AppCompatActivity {
                 layout.addView(iv);
             }
 
-            // display ten stack
+            // display ten coin stack
             for (int i = 0; i < ten; i++) {
                 ImageView iv = new ImageView(this);
                 iv.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
@@ -80,7 +91,7 @@ public class CoinsBankActivity extends AppCompatActivity {
                 layout.addView(iv);
             }
 
-            // display five stack
+            // display five coin stack
             for (int i = 0; i < five; i++) {
                 ImageView iv = new ImageView(this);
                 iv.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
@@ -114,14 +125,17 @@ public class CoinsBankActivity extends AppCompatActivity {
             }
         }
 
+        // Set total coins graphic to invisible
         numTotalGoldCoins.setVisibility(View.INVISIBLE);
         plusSign.setVisibility(View.INVISIBLE);
         numTotalSilverCoins.setVisibility(View.INVISIBLE);
         earnedTotal.setVisibility(View.INVISIBLE);
 
+        // Get audio files
         final MediaPlayer coinsAvailable = MediaPlayer.create(CoinsBankActivity.this, R.raw.coins_available);
         final MediaPlayer coinsTotal = MediaPlayer.create(CoinsBankActivity.this, R.raw.coins_total);
 
+        // If home button pressed, go to MainActivity
         home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -132,26 +146,26 @@ public class CoinsBankActivity extends AppCompatActivity {
             }
         });
 
+        // If repeat button pressed, play coin graphic
         repeat.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+                // Dim repeat button and disable it
                 repeat.setAlpha(0.5f);
                 repeat.setEnabled(false);
 
+                // Start coins available audio
                 coinsAvailable.start();
+                // Show total coins graphic when coins available audio ends
                 coinsAvailable.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
                     @Override
                     public void onCompletion(MediaPlayer mediaPlayer) {
-//                        View currentView = CoinsBankActivity.this.findViewById(android.R.id.content);
-//                        AlphaAnimation animate = new AlphaAnimation(1.0f, 0.4f);
-//                        animate.setDuration(1000);
-//                        animate.setFillAfter(true);
-//                        currentView.startAnimation(animate);
 
                         numTotalGoldCoins.startAnimation(AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.fade_in));
                         numTotalGoldCoins.setVisibility(View.VISIBLE);
                         earnedTotal.startAnimation(AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.fade_in));
                         earnedTotal.setVisibility(View.VISIBLE);
 
+                        // Show total silver coins if number of silver coins is non-zero
                         if (totalSilver != 0) {
                             numTotalSilverCoins.startAnimation(AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.fade_in));
                             numTotalSilverCoins.setVisibility(View.VISIBLE);
@@ -164,13 +178,10 @@ public class CoinsBankActivity extends AppCompatActivity {
                     }
                 });
 
+                // Hide total coins graphic at the end of total coins audio
                 coinsTotal.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
                     @Override
                     public void onCompletion(MediaPlayer mediaPlayer) {
-//                        View currentView = CoinsBankActivity.this.findViewById(android.R.id.content);
-//                        AlphaAnimation animate = new AlphaAnimation(0.4f, 1.0f);
-//                        animate.setDuration(1000);
-//                        currentView.startAnimation(animate);
 
                         repeat.setAlpha(1.0f);
                         repeat.setEnabled(true);
@@ -192,6 +203,7 @@ public class CoinsBankActivity extends AppCompatActivity {
             }
         });
 
+        // Start coins graphic when the user loads into the activity
         repeat.performClick();
     }
 

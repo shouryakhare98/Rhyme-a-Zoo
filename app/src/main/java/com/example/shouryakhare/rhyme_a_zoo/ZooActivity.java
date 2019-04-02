@@ -11,6 +11,9 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
 
+/**
+ * Activity to display the zoo
+ */
 public class ZooActivity extends AppCompatActivity {
 
     private float xcoord, ycoord;
@@ -22,6 +25,7 @@ public class ZooActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_zoo);
 
+        // Get views
         this.home = findViewById(R.id.zooActivity_home);
         this.zooCatch = findViewById(R.id.zooActivity_catch);
         this.lowerSet = new Button[] {
@@ -38,15 +42,18 @@ public class ZooActivity extends AppCompatActivity {
         this.cancel = findViewById(R.id.zooActivity_cancel);
         final ImageView iv = new ImageView(this);
 
+        // Disable cancel button
         this.cancel.setEnabled(false);
         this.cancel.setVisibility(View.INVISIBLE);
 
+        // Set zoo section button listeners
         for (int i = 0; i < lowerSet.length; i++) {
             lowerSet[i].setOnClickListener(returnListener(i+1));
             upperSet[i].setOnClickListener(returnListener(i+1));
             upperSet[i].setBackgroundResource(android.R.color.transparent);
         }
 
+        // If zoo catch button is pressed, display user avatar, enable cancel button, and disable all other buttons
         this.zooCatch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -66,6 +73,7 @@ public class ZooActivity extends AppCompatActivity {
                 iv.setX(300.0f);
                 iv.setY(150.0f);
 
+                // Zoo avatar is movable as the user drags it across the screen
                 iv.setOnTouchListener(new View.OnTouchListener() {
                     @Override
                     public boolean onTouch(View view, MotionEvent motionEvent) {
@@ -89,6 +97,7 @@ public class ZooActivity extends AppCompatActivity {
             }
         });
 
+        // If help button is pressed, show upperset buttons for 5 seconds
         this.help.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -106,6 +115,7 @@ public class ZooActivity extends AppCompatActivity {
             }
         });
 
+        // If cancel button is pressed, hide the avatar and display all other buttons
         this.cancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -116,6 +126,7 @@ public class ZooActivity extends AppCompatActivity {
             }
         });
 
+        // If home button is pressed, go to home
         this.home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -125,6 +136,7 @@ public class ZooActivity extends AppCompatActivity {
         });
     }
 
+    // Method to set a listener for the section buttons
     View.OnClickListener returnListener(final int sectionNum) {
         return new View.OnClickListener() {
             @Override
@@ -155,6 +167,7 @@ public class ZooActivity extends AppCompatActivity {
         };
     }
 
+    // Method to disable/enable buttons based on boolean flag
     void toggleButtons(boolean enable) {
         int visibility = (enable)? View.VISIBLE : View.INVISIBLE;
 

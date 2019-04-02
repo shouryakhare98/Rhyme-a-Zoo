@@ -16,6 +16,9 @@ import android.widget.TextView;
 import static android.view.Gravity.CENTER_HORIZONTAL;
 import static android.view.Gravity.CENTER_VERTICAL;
 
+/**
+ * Activity to display rhyme menu to the user
+ */
 public class RhymeMenuActivity extends AppCompatActivity {
 
     @Override
@@ -23,19 +26,24 @@ public class RhymeMenuActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rhyme_menu);
 
+        // IDProvider to get rhyme names and thumbnails
         IDProvider idProvider = new IDProvider();
 
+        // Get views
         Button home = findViewById(R.id.rhymeActivity_home);
         LinearLayout layout = findViewById(R.id.rhymeMenuActivity_linearLayout);
 
+        // Get window height for spacing calculations
         DisplayMetrics displayMetrics = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
         int height = displayMetrics.heightPixels - 40;
 
+        // Display all rhymes in columns containing 3 rows
         for (int i = 0; i < idProvider.getThumbnailArrayLength(); i+=3) {
             LinearLayout column = new LinearLayout(this);
             column.setOrientation(LinearLayout.VERTICAL);
 
+            // Display <=3 rhymes depending upon how many rhymes are left
             int indicesLeft = idProvider.getThumbnailArrayLength() - i;
 
             LinearLayout thumbnail1;
@@ -63,6 +71,7 @@ public class RhymeMenuActivity extends AppCompatActivity {
 
             final int currentIndex = i;
 
+            // Set click listeners for each rhyme thumbnail. Go to RhymeActivity when clicked and display particular rhyme
             thumbnail1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -93,6 +102,7 @@ public class RhymeMenuActivity extends AppCompatActivity {
             layout.addView(column);
         }
 
+        // If home button pressed, go to home activity
         home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -102,15 +112,19 @@ public class RhymeMenuActivity extends AppCompatActivity {
         });
     }
 
+    // Function to create a rhyme thumbnail
     protected LinearLayout createThumbnail(int drawableIndex, int drawableId, int screenHeight) {
+        // The main layout containing the rhyme name, image, and coins earned for that rhyme
         LinearLayout outerLayout = new LinearLayout(this);
         outerLayout.setOrientation(LinearLayout.HORIZONTAL);
 
+        // Set rhyme image
         ImageView img = new ImageView(this);
         img.setImageResource(drawableId);
         img.setLayoutParams(new LinearLayout.LayoutParams(screenHeight/3, screenHeight/3));
         outerLayout.addView(img);
 
+        // Set rhyme title
         LinearLayout innerLayout = new LinearLayout(this);
         innerLayout.setBackgroundResource(R.drawable.gradient_12);
         innerLayout.setOrientation(LinearLayout.VERTICAL);
@@ -125,6 +139,7 @@ public class RhymeMenuActivity extends AppCompatActivity {
         rhymeName.setText(reader.getTitle(drawableIndex));
         rhymeName.setTypeface(null, Typeface.BOLD);
 
+        // Get and display number of coins earned by that rhyme using Shared Preferences
         String rhymePrefString = drawableIndex + "_coins";
         int coins = 0;
         SharedPreferences pref = getSharedPreferences("MyPref", 0);
@@ -165,6 +180,7 @@ public class RhymeMenuActivity extends AppCompatActivity {
         innerLayout.addView(rhymeName);
         innerLayout.addView(coinShow);
 
+        // Return rhyme "card"
         outerLayout.addView(innerLayout);
         return outerLayout;
     }

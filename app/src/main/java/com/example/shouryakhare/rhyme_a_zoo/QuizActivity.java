@@ -13,6 +13,9 @@ import android.widget.TextView;
 
 import org.apache.commons.lang3.StringUtils;
 
+/**
+ * Activity to display a quiz for a rhyme
+ */
 public class QuizActivity extends AppCompatActivity {
 
     Button home;
@@ -33,6 +36,7 @@ public class QuizActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
 
+        // Get views
         this.home = findViewById(R.id.quizActivity_home);
         this.replay = findViewById(R.id.quizActivity_replay);
         this.rhyme = findViewById(R.id.quizActivity_rhymeButton);
@@ -47,17 +51,22 @@ public class QuizActivity extends AppCompatActivity {
         };
         this.transition = findViewById(R.id.quizActivity_transitionButton);
 
+        // Get the index of the rhyme user is currently on
         final int rhymeIndex = getIntent().getIntExtra("id",0);
 
+        // Initialize JSONReader and IDProvider
         JSONReader reader = new JSONReader(this);
         IDProvider idp = new IDProvider();
 
+        // Get questions and options for this rhyme
         this.questions = reader.getQuestions(rhymeIndex);
         this.options = reader.getOptions(rhymeIndex);
 
+        // Get the last question given to the user. Questions with indices 0,1,2, and 4 are displayed.
         final int[] lastQuestion = {getIntent().getIntExtra("lastQuestion", -1)};
         int correctOption;
         final int[] numTries = {1};
+        // Get coins earned by the user for this question set
         final int[] coinsEarned = {getIntent().getIntExtra("coinsEarned", 0)};
 
         if (lastQuestion[0] == 2) {
@@ -65,10 +74,14 @@ public class QuizActivity extends AppCompatActivity {
         } else {
             lastQuestion[0]++;
         }
+        // Randomly display the correct option among the set of options
         correctOption = randomDisplay(lastQuestion[0]);
 
+        // Set click listeners for each option button
         for (int i = 0; i < this.optionButtons.length; i++) {
             final int index = i;
+
+            // If current option is the correct one, hide all other options, play success audio and prepare to move to next option
             if (i == correctOption) {
                 this.optionButtons[i].setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -97,7 +110,9 @@ public class QuizActivity extends AppCompatActivity {
                         }, 2000);
                     }
                 });
-            } else {
+            }
+            // If current option is not correct, hide the option and play failure audio
+            else {
                 this.optionButtons[i].setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
@@ -116,6 +131,7 @@ public class QuizActivity extends AppCompatActivity {
             }
         }
 
+        // If home button pressed, go to MainActivity
         this.home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -124,6 +140,7 @@ public class QuizActivity extends AppCompatActivity {
             }
         });
 
+        // If rhyme button pressed, go to RhymeActivity and display the rhyme
         this.rhyme.setImageResource(idp.getThumbnailId(rhymeIndex));
         this.rhyme.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -134,6 +151,7 @@ public class QuizActivity extends AppCompatActivity {
             }
         });
 
+        // If replay button pressed (action moved to stretch goals)
         this.replay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -141,6 +159,9 @@ public class QuizActivity extends AppCompatActivity {
             }
         });
 
+        // A dummy transition button to move to the next activity
+        // If 4 questions are done, then move to QuizCompletedActivity
+        // Else display the same activity with a new question
         this.transition.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -162,6 +183,7 @@ public class QuizActivity extends AppCompatActivity {
         this.replay.performClick();
     }
 
+    // Method to randomly display options
     private int randomDisplay(int questionIndex) {
         int[] indexArray = {0,1,2,3};
         shuffle(indexArray);
@@ -185,6 +207,7 @@ public class QuizActivity extends AppCompatActivity {
         return correct;
     }
 
+    // Method to shuffle an array in place
     private void shuffle(int[] array) {
         int index;
         java.util.Random random = new java.util.Random();

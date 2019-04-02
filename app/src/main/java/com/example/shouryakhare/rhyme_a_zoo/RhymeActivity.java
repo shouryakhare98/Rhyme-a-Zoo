@@ -10,6 +10,9 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+/**
+ * Activity to display a rhyme for the user
+ */
 public class RhymeActivity extends AppCompatActivity {
 
     @Override
@@ -17,8 +20,10 @@ public class RhymeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rhyme);
 
+        // Get IDProvider
         IDProvider idProvider = new IDProvider();
 
+        // Get all views
         Button home = findViewById(R.id.rhymeActivity_home);
         Button rhymeMenu = findViewById(R.id.rhymeActivity_listRhymes);
         Button forward = findViewById(R.id.rhymeActivity_forward);
@@ -28,23 +33,28 @@ public class RhymeActivity extends AppCompatActivity {
         ImageView illustration = findViewById(R.id.rhymeActivity_illustration);
         TextView rhymeText = findViewById(R.id.rhymeActivity_rhymeText);
 
+        // Get current rhyme index and disable navigation buttons if at the start or end of rhyme list
         final int rhymeIndex = getIntent().getIntExtra("id",0);
         if (rhymeIndex == 0) {
             backward.setVisibility(View.INVISIBLE);
             backward.setEnabled(false);
-        } else if (rhymeIndex == idProvider.getIllustrationArrayLength()-1) {
+        } else if (rhymeIndex == idProvider.getRhymesArrayLength()-1) {
             forward.setVisibility(View.INVISIBLE);
             forward.setEnabled(false);
         }
 
+        // Get rhyme audio
         final MediaPlayer rhymeMedia = MediaPlayer.create(RhymeActivity.this, idProvider.getRhymesId(rhymeIndex));
 
+        // Set illustration image
         illustration.setImageResource(idProvider.getIllustrationId(rhymeIndex));
 
+        // Get rhyme text from JSON and display
         JSONReader reader = new JSONReader(this);
         rhymeText.setText(reader.getRhyme(rhymeIndex));
         rhymeText.setMovementMethod(new ScrollingMovementMethod());
 
+        // If repeat button pressed, replay rhyme audio
         repeat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -66,6 +76,7 @@ public class RhymeActivity extends AppCompatActivity {
             }
         });
 
+        // If forward button pressed, move to next rhyme
         forward.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -77,6 +88,7 @@ public class RhymeActivity extends AppCompatActivity {
             }
         });
 
+        // If previous button pressed, move to previous rhyme
         backward.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -88,6 +100,7 @@ public class RhymeActivity extends AppCompatActivity {
             }
         });
 
+        // If home button pressed, go to home activity
         home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -98,6 +111,7 @@ public class RhymeActivity extends AppCompatActivity {
             }
         });
 
+        // If rhyme menu button pressed, go to RhymeMenuActivity
         rhymeMenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -108,6 +122,7 @@ public class RhymeActivity extends AppCompatActivity {
             }
         });
 
+        // If check button pressed, go to QuizActivity
         check.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -117,6 +132,7 @@ public class RhymeActivity extends AppCompatActivity {
             }
         });
 
+        // Star the rhyme when the user loads this activity
         repeat.performClick();
     }
 }

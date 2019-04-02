@@ -13,6 +13,7 @@ import android.widget.ImageView;
 
 /**
  * Created by heenapatel on 3/21/19.
+ * Activity to display section 1 (herbivores) of the zoo
  */
 
 public class ZooSection1Activity extends AppCompatActivity  {
@@ -41,6 +42,7 @@ public class ZooSection1Activity extends AppCompatActivity  {
 
         this.pref = getApplicationContext().getSharedPreferences("MyPref", 0); //0 for private mode
 
+        // Get views, audio files
         this.home = findViewById(R.id.zooSection1_home);
         this.cancel = findViewById(R.id.zooSection1_cancel);
         this.back = findViewById(R.id.zooSection1_back);
@@ -72,12 +74,10 @@ public class ZooSection1Activity extends AppCompatActivity  {
         this.hippoSound = MediaPlayer.create(ZooSection1Activity.this, R.raw.hippo);
         this.kangarooSound = MediaPlayer.create(ZooSection1Activity.this, R.raw.kangaroo);
 
-        //True if colored animal should be shown
-        //False if grey animal should be shown
         SharedPreferences.Editor editor = this.pref.edit();
         if (!(this.pref.contains("kangaroo")) || !(this.pref.contains("hippo")) || !(this.pref.contains("panda")) || !(this.pref.contains("giraffe"))) {
-            //SharedPreferences does not contain currentCoins
-            //Initialize current coins and total coins to 0
+            //SharedPreferences does not contain if animal was bought or not
+            //Initialize animals to false
 
             editor.putBoolean("kangaroo", false);
             editor.putBoolean("hippo", false);
@@ -89,12 +89,14 @@ public class ZooSection1Activity extends AppCompatActivity  {
         }
         editor.apply(); //commit changes
 
+        // Set listeners, and images
         setButtonListeners();
         setAnimalListeners();
         setImageColor();
         setCoinListeners();
     }
 
+    // Method to toggle buttons based on boolean flag
     void toggleButtons(boolean enable) {
         int visibility = (enable)? View.VISIBLE : View.INVISIBLE;
 
@@ -124,6 +126,7 @@ public class ZooSection1Activity extends AppCompatActivity  {
         this.hippoCoins.setVisibility(visibility);
     }
 
+    // Method to stop audio if playing
     void stopAllMedia() {
         if (this.herbivores.isPlaying()) this.herbivores.stop();
         if (this.kangarooFact.isPlaying()) this.kangarooFact.stop();
@@ -136,8 +139,11 @@ public class ZooSection1Activity extends AppCompatActivity  {
         if (this.hippoSound.isPlaying()) this.hippoSound.stop();
     }
 
+    // Method to set button listeners
     void setButtonListeners() {
         final ImageView iv = new ImageView(this);
+
+        // If catch button pressed, display user avatar and disable all buttons except cancel
         this.zooCatch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -156,6 +162,7 @@ public class ZooSection1Activity extends AppCompatActivity  {
                 iv.setX(300.0f);
                 iv.setY(150.0f);
 
+                // Avatar is draggable by the user
                 iv.setOnTouchListener(new View.OnTouchListener() {
                     @Override
                     public boolean onTouch(View view, MotionEvent motionEvent) {
@@ -179,6 +186,7 @@ public class ZooSection1Activity extends AppCompatActivity  {
             }
         });
 
+        // If cancel button pressed, hide user avatar and enable all buttons
         this.cancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -189,6 +197,7 @@ public class ZooSection1Activity extends AppCompatActivity  {
             }
         });
 
+        // If home button pressed, go to home screen
         this.home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -198,6 +207,7 @@ public class ZooSection1Activity extends AppCompatActivity  {
             }
         });
 
+        // If back button pressed, go to ZooActivity
         this.back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -207,6 +217,7 @@ public class ZooSection1Activity extends AppCompatActivity  {
             }
         });
 
+        // If number or info button pressed, play audio file about zoo section
         this.number.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -226,6 +237,7 @@ public class ZooSection1Activity extends AppCompatActivity  {
         });
     }
 
+    // Method to set listeners for animal images. Pressing them plays an audio file about that animal
     void setAnimalListeners() {
         this.kangaroo.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -264,17 +276,24 @@ public class ZooSection1Activity extends AppCompatActivity  {
         });
     }
 
+    // Method to set listeners for coins below each animal
+    // If the user has >= 20 coins and presses the coin stack below an animal,
+    // The animal turns to color, which means it is bought and the user can listen to the animal sound
     void setCoinListeners() {
         this.kangarooCoins.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 stopAllMedia();
+                // Play animal sound if animal is already bought
                 if (pref.getBoolean("kangaroo", false)) {
                     kangarooSound = MediaPlayer.create(ZooSection1Activity.this, R.raw.kangaroo);
                     kangarooSound.start();
                 } else {
+                    // Get coins in the bank
                     int currentCoins = pref.getInt("currentCoins", 0);
 
+                    // If user does not have enough coins, play failure audio
+                    // Else buy the animal
                     if (currentCoins < coinsNeeded) {
                         MediaPlayer moreMoney = MediaPlayer.create(ZooSection1Activity.this, R.raw.more_money);
                         moreMoney.start();
@@ -300,6 +319,7 @@ public class ZooSection1Activity extends AppCompatActivity  {
             }
         });
 
+        // Same function as above
         this.hippoCoins.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -335,6 +355,7 @@ public class ZooSection1Activity extends AppCompatActivity  {
             }
         });
 
+        // Same function as above
         this.pandaCoins.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -370,6 +391,7 @@ public class ZooSection1Activity extends AppCompatActivity  {
             }
         });
 
+        // Same function as above
         this.giraffeCoins.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -406,6 +428,7 @@ public class ZooSection1Activity extends AppCompatActivity  {
         });
     }
 
+    // Method to set image color by checking if the user has bought an animal or not
     void setImageColor() {
         if (this.pref.getBoolean("kangaroo", false)) {
             this.kangaroo.setImageResource(R.drawable.kangaroo_color);

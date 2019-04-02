@@ -13,6 +13,8 @@ import android.widget.ImageView;
 
 /**
  * Created by heenapatel on 3/21/19.
+ * Activity to display section 3 (aquatic animals) of the zoo
+ * Same functionality as ZooSection1Activity (only variable names changed)
  */
 
 public class ZooSection3Activity extends AppCompatActivity  {

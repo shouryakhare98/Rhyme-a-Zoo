@@ -10,11 +10,15 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 
+/**
+ * Class that reads from a JSON file (named rhyme_data.json in raw folder)
+ */
 public class JSONReader {
 
     private JSONObject obj;
     private Context mContext;
 
+    // Constructor that provides the application context and opens JSON file
     public JSONReader(Context c) {
         this.mContext = c;
 
@@ -38,6 +42,7 @@ public class JSONReader {
         }
     }
 
+    // Get a title of a particular rhyme
     public String getTitle(int index) {
         try {
             JSONObject data = this.obj.getJSONObject(String.valueOf(index));
@@ -48,6 +53,7 @@ public class JSONReader {
         }
     }
 
+    // Get text of a particular rhyme
     public String getRhyme(int index) {
         try {
             JSONObject data = this.obj.getJSONObject(String.valueOf(index));
@@ -58,6 +64,7 @@ public class JSONReader {
         }
     }
 
+    // Get questions to be asked for a rhyme
     public String[] getQuestions(int index) {
         try {
             JSONObject data = this.obj.getJSONObject(String.valueOf(index));
@@ -75,6 +82,7 @@ public class JSONReader {
         }
     }
 
+    // Get options of questions for a rhyme
     public String[][] getOptions(int index) {
         try {
             JSONObject data = this.obj.getJSONObject(String.valueOf(index));
