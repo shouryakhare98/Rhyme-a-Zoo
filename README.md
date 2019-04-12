@@ -40,7 +40,8 @@ DEPENDENT LIBRARIES
 
 DOWNLOAD INSTRUCTIONS
 * Go to [the GitHub repository](https://github.com/shouryakhare98/Rhyme-a-Zoo).
-* Click on "Clone or Download".
+* Click on "Clone or Download", and then on "Download ZIP".
+* Extract all files from the ZIP file.
 
 BUILD INSTRUCTIONS
 * Open the project in Android Studio.
