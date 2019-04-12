@@ -30,7 +30,7 @@ INCOMPLETE FEATURES
 * Questions and options audio not added to Quiz Activity.
 
 # INSTALL GUIDE
-Install Guide Rhyme-a-Zoo 1.0
+Install Guide version Rhyme a Zoo 1.0
 
 PRE-REQUISITES
 * Computer running Windows 10 (or greater) or MacOS 10 (or greater).
