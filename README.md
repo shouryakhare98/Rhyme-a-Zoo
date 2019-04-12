@@ -15,10 +15,12 @@ NEW FEATURES
 * Added Avatar Activity
 
 BUG FIXES
-* None
+* Fixed bug where audio files keep playing after moving to a different screen.
+* Clicking on rhyme icon on QuizCompletedActivity redirects to RhymeActivity instead of crashing the application.
+* Removed fade-out and fade-in animations of coins in ZooActivity which slowed down the application.
 
 KNOWN BUGS
-* Some options in Quiz Activity do not have corresponding images.
+* Some options in Quiz Activity do not have corresponding images, and are therefore not displayed.
 * Some questions in Quiz Activity do not have corresponding audio files.
 
 INCOMPLETE FEATURES
