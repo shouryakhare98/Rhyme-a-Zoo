@@ -15,10 +15,12 @@ NEW FEATURES
 * Added Avatar Activity
 
 BUG FIXES
-* None
+* Fixed bug where audio files keep playing after moving to a different screen.
+* Clicking on rhyme icon on QuizCompletedActivity redirects to RhymeActivity instead of crashing the application.
+* Removed fade-out and fade-in animations of coins in ZooActivity which slowed down the application.
 
 KNOWN BUGS
-* Some options in Quiz Activity do not have corresponding images.
+* Some options in Quiz Activity do not have corresponding images, and are therefore not displayed.
 * Some questions in Quiz Activity do not have corresponding audio files.
 
 INCOMPLETE FEATURES
@@ -28,7 +30,7 @@ INCOMPLETE FEATURES
 * Questions and options audio not added to Quiz Activity.
 
 # INSTALL GUIDE
-Install Guide Rhyme-a-Zoo 1.0
+Install Guide version Rhyme a Zoo 1.0
 
 PRE-REQUISITES
 * Computer running Windows 10 (or greater) or MacOS 10 (or greater).
@@ -38,7 +40,8 @@ DEPENDENT LIBRARIES
 
 DOWNLOAD INSTRUCTIONS
 * Go to [the GitHub repository](https://github.com/shouryakhare98/Rhyme-a-Zoo).
-* Click on "Clone or Download".
+* Click on "Clone or Download", and then on "Download ZIP".
+* Extract all files from the ZIP file.
 
 BUILD INSTRUCTIONS
 * Open the project in Android Studio.
