@@ -2,7 +2,7 @@
   "0":{
     "title":"CHILDREN CALL ME MOTHER GOOSE",
     "rhyme":"Old mother goose, when\nShe wanted to wander,\nWould ride through the air\nOn a very fine gander.",
-    "questions":["Mother Goose would ride on a very fine what?	", "The rhyme says Mother Goose was what?", "Mother Goose liked to ride through the what?", "Mother Goose sometimes wanted to do what?", "What sound comes at the very beginning of \"wanted\" and \"wander\"?"],
+    "questions":["Mother Goose would ride on a very fine what?", "The rhyme says Mother Goose was what?", "Mother Goose liked to ride through the what?", "Mother Goose sometimes wanted to do what?", "What sound comes at the very beginning of \"wanted\" and \"wander\"?"],
     "options":[["gander", "broom", "horse", "balloon"],["old", "rich", "sick","sad"],["air","haystack","tent","puddle"],["wander","dance","hide","jump"],["w","s","t","k"]]
   },
   "1":{
@@ -20,8 +20,8 @@
   "3":{
     "title":"LITTLE JACK HORNER",
     "rhyme":"Little Jack Horner\nSat in a corner\nEating a Christmas pie;\nHe put in his thumb,\nAnd pulled out a plum,\nAnd said: \"What a good boy am I!\"",
-    "questions":["What did the little boy do in a corner?","The little boy put his thumb in a what?","The little boy pulled out a what?","The little boy was named what?","What sounds come at the end of \"thumb\" and \"plum\"?"],
-    "options":[["sat","sang","danced","slept"],["pie","balloon","cobweb","fire"],["plum","egg","fish","squirrel"],["Jack","Luis","Simon","Ahmad"],["um","ot","gr","ak"]]
+    "questions":["What did the little boy do in a corner?","The little boy put his thumb in a what?","The little boy pulled out a what?","What sounds come at the end of \"thumb\" and \"plum\"?"],
+    "options":[["sat","sang","danced","slept"],["pie","balloon","cobweb","fire"],["plum","egg","fish","squirrel"],["um","ot","gr","ak"]]
   },
   "4":{
     "title":"LITTLE TOM TUCKER",
