@@ -45,13 +45,14 @@
         android:animationCache="false"
         android:background="#ffe4b5">
 
-        <ImageView
+        <com.makeramen.roundedimageview.RoundedImageView
             android:id="@+id/rhymeActivity_illustration"
             android:layout_width="286dp"
             android:layout_height="393dp"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
             android:layout_weight="1"
+            android:scaleType="centerInside"
             android:contentDescription="@string/rhyme_illustration"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/rhymeActivity_rhymeText"
@@ -59,7 +60,11 @@
             app:layout_constraintHorizontal_chainStyle="spread"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/rhyme001_illustration" />
+            app:srcCompat="@drawable/rhyme001_illustration"
+            app:riv_border_color="#000000"
+            app:riv_border_width="2dip"
+            app:riv_corner_radius="30dip"
+            app:riv_mutate_background="true" />
 
         <Button
             android:id="@+id/rhymeActivity_check"

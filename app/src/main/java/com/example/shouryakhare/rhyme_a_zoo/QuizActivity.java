@@ -194,7 +194,23 @@ public class QuizActivity extends AppCompatActivity {
             String optionText = this.options[questionIndex][indexArray[i]];
             optionText = optionText.replaceAll("[ -]", "_").toLowerCase();
 
-            optionButtons[i].setBackgroundResource(this.getApplicationContext().getResources().getIdentifier(optionText, "drawable", this.getPackageName()));
+            // Display letters A, B, C, and D as option images
+            // Uncomment line below when all option images are added to drawable folder
+            //optionButtons[i].setBackgroundResource(this.getApplicationContext().getResources().getIdentifier(optionText, "drawable", this.getPackageName()));
+            switch(i) {
+                case 0:
+                    optionButtons[i].setBackgroundResource(R.drawable.letter_a);
+                    break;
+                case 1:
+                    optionButtons[i].setBackgroundResource(R.drawable.letter_b);
+                    break;
+                case 2:
+                    optionButtons[i].setBackgroundResource(R.drawable.letter_c);
+                    break;
+                case 3:
+                    optionButtons[i].setBackgroundResource(R.drawable.letter_d);
+            }
+
 
             optionText = StringUtils.capitalize(optionText);
             this.optionTexts[i].setText(optionText);
